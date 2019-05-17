@@ -15,29 +15,23 @@
   <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="<?php echo site_url('#'); ?>">Sistem Penunjang Keputusan</a>
+          <a class="navbar-brand" href="<?php echo site_url('home/index'); ?>">Sistem Penunjang Keputusan</a>
         </div>
     <ul class="nav navbar-nav navbar-right">
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kriteria<span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Lihat Data<span class="caret"></span></a>
       <ul class="dropdown-menu">
       <li>
-        <a href="<?php echo site_url('kriteria'); ?>">Lihat Data Kriteria</a>
-      </li>
-      <li>
-        <a href="<?php echo site_url('kriteria/input'); ?>">Input Data Kriteria</a>
+        <a href="<?php echo site_url('kriteria/index'); ?>">Kriteria</a>
       </li>
       </ul>
       </li>
       <li>
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Himpunan Kriteria<span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Input Data<span class="caret"></span></a>
       <ul class="dropdown-menu">
       <li>
-        <a href="<?php echo site_url('crips'); ?>">Lihat Himpunan Kriteria</a>
-      </li>
-      <li>
-        <a href="<?php echo site_url('crips'); ?>">Input Himpunan Kriteria</a>
+        <a href="<?php echo site_url('kriteria/input'); ?>">Input Data Kriteria</a>
       </li>
     </ul>
   </div>
