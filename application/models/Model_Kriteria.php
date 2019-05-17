@@ -6,7 +6,6 @@ class Model_Kriteria extends CI_Model{
 	function __construct()
 	{
 		parent::__construct();
-		//$this->load->helper('url');
 	}
 
 	function tampil_data(){
