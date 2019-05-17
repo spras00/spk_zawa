@@ -37,7 +37,7 @@
         <a href="<?php echo site_url('crips'); ?>">Lihat Himpunan Kriteria</a>
       </li>
       <li>
-        <a href="<?php echo site_url('crips'); ?>">Input Himpunan Kriteria</a>
+        <a href="<?php echo site_url('crips/input'); ?>">Input Himpunan Kriteria</a>
       </li>
     </ul>
   </div>
