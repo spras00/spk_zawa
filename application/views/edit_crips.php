@@ -18,7 +18,7 @@
 			<div class="form-group">
 				<label for="id_cp" class="control-label col-sm-4">ID CRIPS</label>
 				<div class="col-xs-4">
-				<input type="text" class="form-control" name="id_cp" value="<?php echo $crips['id_cp']?>">
+				<input type="text" class="form-control" name="id_cp" value="<?php echo $crips['id_cp']?>" readonly>
 				</div>
 			</div>
 			<div class="form-group">
