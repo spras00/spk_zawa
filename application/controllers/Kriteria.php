@@ -23,10 +23,10 @@ class Kriteria extends CI_Controller{
 
 		$data['title'] = 'Input Data Kriteria';
 
-		$this->form_validation->set_rules('id_k', 'ID KRITERIA', 'required');
+		$this->form_validation->set_rules('id_k', 'ID KRITERIA', 'trim|required');
 		$this->form_validation->set_rules('nm_k', 'NAMA KRITERIA', 'required');
 		$this->form_validation->set_rules('atribut', 'ATRIBUT', 'required');
-		$this->form_validation->set_rules('bobot', 'BOBOT', 'required');
+		$this->form_validation->set_rules('bobot', 'BOBOT', 'trim|required');
 
 		if($this->form_validation->run() === FALSE)
 		{
@@ -36,7 +36,7 @@ class Kriteria extends CI_Controller{
 		}else
 		{
 			$this->Model_Kriteria->buat();
-			redirect('kriteria/index');
+			redirect('kriteria');
 		}
 	}
 
@@ -49,7 +49,7 @@ class Kriteria extends CI_Controller{
 
 		$data['kriteria'] = $this->Model_Kriteria->bacaid($id_k);
 		$this->Model_Kriteria->hapus($id_k);
-		redirect('kriteria/index');
+		redirect('kriteria');
 	}
 
 	function edit($id_k){
@@ -62,10 +62,10 @@ class Kriteria extends CI_Controller{
         $data['title'] = 'Ubah Data Kriteria';
 		$data['kriteria'] = $this->Model_Kriteria->bacaid($id_k);
 
-        $this->form_validation->set_rules('id_k', 'ID KRITERIA', 'required');
+        $this->form_validation->set_rules('id_k', 'ID KRITERIA', 'trim|required');
 		$this->form_validation->set_rules('nm_k', 'NAMA KRITERIA', 'required');
 		$this->form_validation->set_rules('atribut', 'ATRIBUT', 'required');
-		$this->form_validation->set_rules('bobot', 'BOBOT', 'required');
+		$this->form_validation->set_rules('bobot', 'BOBOT', 'trim|required');
 
 		if($this->form_validation->run() === FALSE)
 		{
@@ -75,7 +75,7 @@ class Kriteria extends CI_Controller{
 		}else
 		{
 			$this->Model_Kriteria->buat($id_k);
-			redirect('kriteria/index');
+			redirect('kriteria');
 		}
 	}
   
