@@ -7,7 +7,7 @@
 <?php echo form_open('kriteria/edit/'.$kriteria['id_k']);?>
 <div class="form-horizontal">
 		<div class="form-group">
-				<label for="id_k" class="control-label col-sm-4">NIM</label>
+				<label for="id_k" class="control-label col-sm-4">ID KRITERIA</label>
 				<div class="col-xs-4">
 				<input type="text" class="form-control" name="id_k" value="<?php echo $kriteria['id_k']?>" readonly>
 				</div>
