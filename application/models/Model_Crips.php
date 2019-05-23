@@ -8,7 +8,12 @@ Class Model_Crips extends CI_Model{
 		parent::__construct();
 	}
 
-		function tampil_data(){
+	function tampil_data1(){
+		$query = $this->db->get('_kriteria');
+		return $query->result_array();
+		}
+
+	function tampil_data2(){
 		$query = $this->db->get('_crips');
 		return $query->result_array();
 	}
