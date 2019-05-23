@@ -18,26 +18,11 @@
           <a class="navbar-brand" href="<?php echo site_url('#'); ?>">Sistem Penunjang Keputusan</a>
         </div>
     <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kriteria<span class="caret"></span></a>
-      <ul class="dropdown-menu">
       <li>
-        <a href="<?php echo site_url('kriteria'); ?>">Lihat Data Kriteria</a>
+        <a href="<?php echo site_url('kriteria'); ?>">Kriteria</a>
       </li>
       <li>
-        <a href="<?php echo site_url('kriteria/input'); ?>">Input Data Kriteria</a>
-      </li>
-      </ul>
-      </li>
-      <li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Himpunan Kriteria<span class="caret"></span></a>
-      <ul class="dropdown-menu">
-      <li>
-        <a href="<?php echo site_url('crips'); ?>">Lihat Himpunan Kriteria</a>
-      </li>
-      <li>
-        <a href="<?php echo site_url('crips/input'); ?>">Input Himpunan Kriteria</a>
+        <a href="<?php echo site_url('crips'); ?>">Nilai Crips Kriteria</a>
       </li>
     </ul>
   </div>
@@ -47,4 +32,3 @@
     <div class="panel panel-default">
       <div class="page-header">
         <h1 align="center"><?php echo $title; ?></h1>
-      </div>
