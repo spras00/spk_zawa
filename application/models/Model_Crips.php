@@ -13,8 +13,8 @@ Class Model_Crips extends CI_Model{
 		return $query->result_array();
 		}
 
-	function tampil_data2(){
-		$query = $this->db->get('_crips');
+	function tampil_data2($id_k){
+		$query = $this->db->get_where('_crips', array('id_k' => $id_k));
 		return $query->result_array();
 	}
 
