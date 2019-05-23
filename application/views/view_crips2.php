@@ -12,7 +12,7 @@
 				TAMBAH NILAI CRIPS
 			</th>
 			<th>
-				UBAH NILAI CRIPS
+				LIHAT NILAI CRIPS
 			</th>
 		</tr>
 	</thead>
