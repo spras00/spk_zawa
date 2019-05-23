@@ -11,6 +11,7 @@ Class Crips extends CI_Controller {
 
 	function index(){
 		$data['title'] = 'Himpunan Kriteria';
+		$data['title'] = 'Crips Kriteria';
 		$data['crips'] = $this->Model_Crips->tampil_data();
 		$this->load->view('header', $data);
 		$this->load->view('view_crips', $data);
@@ -22,6 +23,7 @@ Class Crips extends CI_Controller {
 		$this->load->library('form_validation');
 
 		$data['title'] = 'Input Data Himpunan';
+		$data['title'] = 'Input Data Crips';
 		$data['kriteria'] = $this->Model_Crips->combokriteria();
 
 		$this->form_validation->set_rules('id_k', 'NAMA KRITERIA', 'trim|required');
@@ -61,6 +63,7 @@ Class Crips extends CI_Controller {
         }
 
         $data['title'] = 'Ubah Data Kriteria';
+        $data['title'] = 'Ubah Data Crips';
 		$data['crips'] = $this->Model_Crips->bacaid($id_cp);
 		$data['kriteria'] = $this->Model_Crips->combokriteria();
 
