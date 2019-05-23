@@ -32,11 +32,15 @@ Class Crips extends CI_Controller {
 	}
 
 	function input(){
-
+		$id_k = $this->uri->segment(3);
+		if (empty($id_k))
+        {
+            show_404();
+        }
 		$this->load->library('form_validation');
 
 		$data['title'] = 'Input Data Crips';
-		$data['kriteria'] = $this->Model_Crips->combokriteria();
+		$data['kriteria'] = $this->Model_Crips->combokriteria($id_k);
 
 		$this->form_validation->set_rules('id_k', 'NAMA KRITERIA', 'trim|required');
 		$this->form_validation->set_rules('id_cp', 'ID CRIPS', 'trim|required');
