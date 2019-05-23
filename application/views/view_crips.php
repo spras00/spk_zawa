@@ -14,7 +14,6 @@
 				ID CRIPS
 			</th>
 			<th>
-				NAMA HIMPUNAN
 				NAMA CRIPS
 			</th>
 			<th>
