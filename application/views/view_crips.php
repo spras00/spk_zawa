@@ -1,3 +1,12 @@
+<div class="btn header-btn">
+	<a href="<?php echo site_url('crips/input'); ?>">
+		<button type="button" class="btn btn-default" action="">
+		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+		Tambah Data
+		</button>
+	</a>
+</div>	
+</div>
 <table align="center" class="table table-condensed">
 	<thead>
 		<tr>
@@ -6,6 +15,7 @@
 			</th>
 			<th>
 				NAMA HIMPUNAN
+				NAMA CRIPS
 			</th>
 			<th>
 				ID KRITERIA
