@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.26-MariaDB)
-# Date: 2019-05-23 15:56:01
+# Date: 2019-05-23 16:02:22
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -41,6 +41,7 @@ CREATE TABLE `_kriteria` (
 # Data for table "_kriteria"
 #
 
+INSERT INTO `_kriteria` VALUES ('C1','HARGA','0',25),('C2','LOKASI','1',25),('C3','LUAS','1',15),('C4','TIPE','1',15),('C5','FASILITAS','1',20);
 
 #
 # Structure for table "_crips"
