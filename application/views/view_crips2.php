@@ -1,42 +1,61 @@
 </div>
+<div class="btn header-btn pull-right">
+<a href="<?php echo site_url('crips/index'); ?>">
+<button type="button" class="btn btn-default ">
+<span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+Kembali
+</button>
+</a>
+</div>
 <table align="center" class="table table-condensed">
 	<thead>
 		<tr>
 			<th>
+				ID CRIPS
+			</th>
+			<th>
+				NAMA CRIPS
+			</th>
+			<th>
 				ID KRITERIA
 			</th>
 			<th>
-				NAMA KRITERIA
+				SKOR
 			</th>
 			<th>
-				TAMBAH NILAI CRIPS
+				EDIT
 			</th>
 			<th>
-				LIHAT NILAI CRIPS
+				HAPUS
 			</th>
 		</tr>
 	</thead>
 		<?php
-		foreach ($kriteria as $kr) {?>
+		foreach ($crips as $crp) {?>
 			<tr>
 				<td>
-					<?php echo $kr['id_k']; ?>
+					<?php echo $crp['id_cp']; ?>
 				</td>
 				<td>
-					<?php echo $kr['nm_k']; ?>
+					<?php echo $crp['nm_cp']; ?>
 				</td>
 				<td>
-					<a href="<?php echo base_url('crips/input/'.$kr['id_k']); ?>">
-						<button type="button" class="btn btn-default" action="">
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						Tambah Data
+					<?php echo $crp['id_k']; ?>
+				</td>
+				<td>
+					<?php echo $crp['skor']; ?>
+				</td>
+				<td>
+					<a href="<?php echo base_url('crips/edit/'.$crp['id_cp']); ?>">
+						<button type="button" class="btn btn-default">
+  						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
 				<td>
-					<a href="<?php echo base_url('crips/detail/'.$kr['id_k']); ?>">
-						<button type="button" class="btn btn-default">
-  						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+					<a href="<?php echo base_url('crips/delete/'.$crp['id_cp']); ?>">
+						<button type="button" class="btn btn-danger">
+						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
