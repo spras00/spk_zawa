@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.26-MariaDB)
-# Date: 2019-05-15 16:51:11
+# Date: 2019-05-23 15:56:01
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -43,22 +43,22 @@ CREATE TABLE `_kriteria` (
 
 
 #
-# Structure for table "_crisp"
+# Structure for table "_crips"
 #
 
-DROP TABLE IF EXISTS `_crisp`;
-CREATE TABLE `_crisp` (
+DROP TABLE IF EXISTS `_crips`;
+CREATE TABLE `_crips` (
   `id_cp` varchar(4) NOT NULL,
   `id_k` varchar(5) NOT NULL,
   `nm_cp` varchar(50) NOT NULL DEFAULT '',
   `skor` double NOT NULL,
   PRIMARY KEY (`id_cp`),
   KEY `id_k` (`id_k`),
-  CONSTRAINT `_crisp_ibfk_1` FOREIGN KEY (`id_k`) REFERENCES `_kriteria` (`id_k`)
+  CONSTRAINT `_crips_ibfk_1` FOREIGN KEY (`id_k`) REFERENCES `_kriteria` (`id_k`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
-# Data for table "_crisp"
+# Data for table "_crips"
 #
 
 
@@ -94,7 +94,7 @@ CREATE TABLE `r_altrumah` (
   KEY `id_cp` (`id_cp`),
   CONSTRAINT `r_altrumah_ibfk_1` FOREIGN KEY (`id_a`) REFERENCES `_altrumah` (`id_a`),
   CONSTRAINT `r_altrumah_ibfk_2` FOREIGN KEY (`id_k`) REFERENCES `_kriteria` (`id_k`),
-  CONSTRAINT `r_altrumah_ibfk_3` FOREIGN KEY (`id_cp`) REFERENCES `_crisp` (`id_cp`)
+  CONSTRAINT `r_altrumah_ibfk_3` FOREIGN KEY (`id_cp`) REFERENCES `_crips` (`id_cp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
