@@ -20,13 +20,13 @@
 			<div class="form-group">
 				<label for="id_cp" class="control-label col-sm-4">ID CRIPS</label>
 				<div class="col-xs-4">
-				<input type="text" class="form-control" name="id_cp" placeholder="ID Kriteria">
+				<input type="text" class="form-control" name="id_cp" placeholder="ID Crips">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="nama_crips" class="control-label col-sm-4">NAMA CRIPS</label>
 				<div class="col-xs-4">
-				<input type="text" class="form-control" name="nm_cp" placeholder="Nama Kriteria">
+				<input type="text" class="form-control" name="nm_cp" placeholder="Nama Crips">
 				</div>
 			</div>
 			<div class="form-group">
