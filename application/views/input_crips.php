@@ -10,7 +10,6 @@
 				<label for="id_k" class="control-label col-sm-4">NAMA KRITERIA</label>
 				<div class="col-xs-4">
 				<select class="form-control" name="id_k">
-					<option value="">	Pilih Kriteria 	</option>
 					<?php foreach ($kriteria as $k) {
 						echo '<option value="'.$k->id_k.'">'.$k->id_k.' - '.$k->nm_k.'</option>';
 					}?>
