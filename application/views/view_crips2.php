@@ -34,7 +34,7 @@
 					</a>
 				</td>
 				<td>
-					<a href="<?php echo base_url('crips/index/'.$crp['id_cp']); ?>">
+					<a href="<?php echo base_url('crips/detail/'.$kr['id_k']); ?>">
 						<button type="button" class="btn btn-default">
   						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 						</button>
