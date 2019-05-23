@@ -1,0 +1,17 @@
+create database saw_zawa21;
+
+create table _user (user varchar(16) not null, pwd varchar(16) not null);
+
+create table _kriteria (id_k int(5) not null auto_increment, nm_k varchar(50) not null, atribut varchar(7) not null,
+bobot double not null, primary key(id_k))
+
+create table _crips (id_cp int(5) not null auto_increment, id_k int(5) not null, nm_cp varchar(50), skor double not null,
+primary key (id_cp), foreign key (id_k) references _kriteria(id_k))
+
+create table _altrumah (id_a int(5) not null auto_increment, nm_a varchar(75) not null, harga int(16) not null, 
+lokasi varchar(100) not null, tipe varchar(15), luas int(5) not null, fasilitas varchar(20) not null, 
+primary key (id_a))
+
+create table r_altrumah (id_r int(5) not null auto_increment, id_a int(5) not null, 
+id_k int(5) not null, id_cp int(5) not null, primary key (id_r), foreign key (id_a) references _altrumah(id_a),
+foreign key (id_k) references _kriteria(id_k), foreign key (id_cp) references _crips(id_cp))
