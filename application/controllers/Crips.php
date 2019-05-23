@@ -13,7 +13,7 @@ Class Crips extends CI_Controller {
 		$data['title'] = 'Crips Kriteria';
 		$data['kriteria'] = $this->Model_Crips->tampil_data1();
 		$this->load->view('header', $data);
-		$this->load->view('view_crips2', $data);
+		$this->load->view('view_crips', $data);
 		$this->load->view('footer');
 	}
 
@@ -27,7 +27,7 @@ Class Crips extends CI_Controller {
 		$data['title'] = 'Detail Crips Kriteria';
 		$data['crips'] = $this->Model_Crips->tampil_data2($id_k);
 		$this->load->view('header', $data);
-		$this->load->view('view_crips', $data);
+		$this->load->view('view_crips2', $data);
 		$this->load->view('footer');
 	}
 
