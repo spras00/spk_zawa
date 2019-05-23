@@ -30,8 +30,8 @@ Class Model_Crips extends CI_Model{
 		return $query->row_array();
 	}
 
-	function combokriteria(){
-		$query = $this->db->get('_kriteria');
+	function combokriteria($id_k){
+		$query = $this->db->get_where('_kriteria', array('id_k' => $id_k));
 		return $query->result();
 	}
 
