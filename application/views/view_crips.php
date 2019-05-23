@@ -1,11 +1,11 @@
-<div class="btn header-btn">
-	<a href="<?php echo site_url('crips/input'); ?>">
-		<button type="button" class="btn btn-default" action="">
-		<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-		Tambah Data
-		</button>
-	</a>
-</div>	
+</div>
+<div class="btn header-btn pull-right">
+<a href="<?php echo site_url('crips/index'); ?>">
+<button type="button" class="btn btn-default ">
+<span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+Kembali
+</button>
+</a>
 </div>
 <table align="center" class="table table-condensed">
 	<thead>
