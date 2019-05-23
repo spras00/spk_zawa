@@ -18,8 +18,14 @@ Class Crips extends CI_Controller {
 	}
 
 	function detail(){
+		$id_k = $this->uri->segment(3);
+		if (empty($id_k))
+        {
+            show_404();
+        }
+
 		$data['title'] = 'Detail Crips Kriteria';
-		$data['crips'] = $this->Model_Crips->tampil_data2();
+		$data['crips'] = $this->Model_Crips->tampil_data2($id_k);
 		$this->load->view('header', $data);
 		$this->load->view('view_crips', $data);
 		$this->load->view('footer');
