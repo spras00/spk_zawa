@@ -22,12 +22,8 @@
 			<th>
 				BOBOT
 			</th>
-			<th>
-				EDIT
-			</th>
-			<th>
-				HAPUS
-			</th>
+			<th></th>
+			<th></th>
 		</tr>
 	</thead>
 		<?php
@@ -48,6 +44,7 @@
 				<td>
 					<a href="<?php echo base_url('kriteria/edit/'.$kr['id_k']); ?>">
 						<button type="button" class="btn btn-default">
+							Edit
   						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 					</a>
@@ -55,6 +52,7 @@
 				<td>
 					<a href="<?php echo base_url('kriteria/delete/'.$kr['id_k']); ?>">
 						<button type="button" class="btn btn-danger">
+							Hapus
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
 					</a>
