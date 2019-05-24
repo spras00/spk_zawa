@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.26-MariaDB)
-# Date: 2019-05-23 16:02:22
+# Date: 2019-05-24 17:01:08
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -62,6 +62,7 @@ CREATE TABLE `_crips` (
 # Data for table "_crips"
 #
 
+INSERT INTO `_crips` VALUES ('CR11','C1','< 1 Milyar Rupiah',100),('CR12','C1','1 - 2 Milyar Rupiah',75),('CR13','C1','2 - 3 Milyar Rupiah',50),('CR14','C1','3 - 4 Milyar Rupiah',25),('CR15','C1','4 - 5 Milyar Rupiah',0),('CR21','C2','Jakarta',100),('CR22','C2','Botedabek',75),('CR23','C2','Luar Jabodetabek',50),('CR31','C3','< 50 m 2',100),('CR32','C3','50 - 100 m2',75);
 
 #
 # Structure for table "_user"
