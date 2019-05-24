@@ -7,12 +7,9 @@
 <?php echo form_open('crips/edit/'.$crips['id_cp']);?>
 <div class="form-horizontal">
 			<div class="form-group">
-				<label for="id_k" class="control-label col-sm-4">NAMA KRITERIA</label>
+				<label for="id_cp" class="control-label col-sm-4">ID KRITERIA</label>
 				<div class="col-xs-4">
-				<select class="form-control" name="id_k">
-					<?php foreach ($kriteria as $k): ?>
-					<<option value="<?php echo $k->id_k; ?>" <?php if($k->id_k==$crips['id_k']) { ?> selected="selected" <?php } ?>><?php echo "{$k->id_k} - {$k->nm_k}"; ?></option><?php endforeach; ?> 
-				</select>
+				<input type="text" class="form-control" name="id_k" value="<?php echo $crips['id_k']?>" readonly>
 				</div>
 			</div>
 			<div class="form-group">
