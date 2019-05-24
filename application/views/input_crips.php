@@ -4,7 +4,7 @@
     echo '</div>';                                 
 }
 ?>
-<?php echo form_open('crips/input');?>
+<?php echo form_open('crips/input/'.$id_k);?>
 <div class="form-horizontal">
 			<div class="form-group">
 				<label for="id_k" class="control-label col-sm-4">NAMA KRITERIA</label>
@@ -44,7 +44,7 @@
 			<div class="form-group"> 
     					<div class="col-sm-offset-4 col-sm-4">
       					<button type="submit" class="btn btn-success btn-block">Simpan</button>
-      					<button type="reset" onclick="location.href='<?php echo base_url();?>Crips'" class="btn btn-danger btn-block">Batal</button>
+      					<button type="reset" onclick="location.href='<?php echo base_url();?>crips'" class="btn btn-danger btn-block">Batal</button>
   						</div>
   			</div>
 </div>
