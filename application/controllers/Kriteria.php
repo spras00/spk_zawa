@@ -23,7 +23,7 @@ class Kriteria extends CI_Controller{
 
 		$data['title'] = 'Input Data Kriteria';
 
-		$this->form_validation->set_rules('id_k', 'ID KRITERIA', 'trim|required');
+		$this->form_validation->set_rules('id_k', 'ID KRITERIA', 'trim|required|min_length[3]');
 		$this->form_validation->set_rules('nm_k', 'NAMA KRITERIA', 'required');
 		$this->form_validation->set_rules('atribut', 'ATRIBUT', 'required');
 		$this->form_validation->set_rules('bobot', 'BOBOT', 'trim|required');
