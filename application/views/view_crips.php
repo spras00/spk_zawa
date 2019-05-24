@@ -9,9 +9,6 @@
 				NAMA KRITERIA
 			</th>
 			<th>
-				TAMBAH NILAI CRIPS
-			</th>
-			<th>
 				LIHAT NILAI CRIPS
 			</th>
 		</tr>
@@ -24,14 +21,6 @@
 				</td>
 				<td>
 					<?php echo $kr['nm_k']; ?>
-				</td>
-				<td>
-					<a href="<?php echo base_url('crips/input/'.$kr['id_k']); ?>">
-						<button type="button" class="btn btn-default" action="">
-						<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-						Tambah Data
-						</button>
-					</a>
 				</td>
 				<td>
 					<a href="<?php echo base_url('crips/detail/'.$kr['id_k']); ?>">
