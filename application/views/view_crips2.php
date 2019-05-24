@@ -1,4 +1,11 @@
 </div>
+<div class="btn header-btn pull-left">
+<a href="<?php echo site_url('crips/input/'.$id_k); ?>">
+<button type="button" class="btn btn-default ">
+<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+Tambah Data
+</button>
+</div>
 <div class="btn header-btn pull-right">
 <a href="<?php echo site_url('crips/index'); ?>">
 <button type="button" class="btn btn-default ">
