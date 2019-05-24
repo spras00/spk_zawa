@@ -9,6 +9,7 @@ Class Crips extends CI_Controller {
 		$this->load->model('Model_Crips'); 
 	}
 
+
 	function index(){
 		$data['title'] = 'Crips Kriteria';
 		$data['kriteria'] = $this->Model_Crips->tampil_data1();
@@ -24,6 +25,7 @@ Class Crips extends CI_Controller {
             show_404();
         }
 
+        $data['id_k'] = $id_k;
 		$data['title'] = 'Detail Crips Kriteria';
 		$data['crips'] = $this->Model_Crips->tampil_data2($id_k);
 		$this->load->view('header', $data);
@@ -37,13 +39,15 @@ Class Crips extends CI_Controller {
         {
             show_404();
         }
-		$this->load->library('form_validation');
 
+
+		$this->load->library('form_validation');
+		$data['id_k'] = $id_k;
 		$data['title'] = 'Input Data Crips';
 		$data['kriteria'] = $this->Model_Crips->combokriteria($id_k);
 
 		$this->form_validation->set_rules('id_k', 'NAMA KRITERIA', 'trim|required');
-		$this->form_validation->set_rules('id_cp', 'ID CRIPS', 'trim|required');
+		$this->form_validation->set_rules('id_cp', 'ID CRIPS', 'trim|required|min_length[4]');
 		$this->form_validation->set_rules('nm_cp', 'NAMA CRIPS', 'trim|required');
 		$this->form_validation->set_rules('skor', 'SKOR', 'trim|required');
 
@@ -80,7 +84,6 @@ Class Crips extends CI_Controller {
 
         $data['title'] = 'Ubah Data Crips';
 		$data['crips'] = $this->Model_Crips->bacaid($id_cp);
-		$data['kriteria'] = $this->Model_Crips->combokriteria();
 
         $this->form_validation->set_rules('id_k', 'NAMA KRITERIA', 'trim|required');
 		$this->form_validation->set_rules('id_cp', 'ID CRIPS', 'trim|required');
