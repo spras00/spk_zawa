@@ -19,10 +19,16 @@
         </div>
     <ul class="nav navbar-nav navbar-right">
       <li>
+        <a href="<?php echo site_url('rumah'); ?>">Data Rumah</a>
+      </li>
+      <li>
         <a href="<?php echo site_url('kriteria'); ?>">Kriteria</a>
       </li>
       <li>
         <a href="<?php echo site_url('crips'); ?>">Nilai Crips Kriteria</a>
+      </li>
+      <li>
+        <a href="<?php echo site_url('cr_rumah'); ?>">Nilai Crips Rumah</a>
       </li>
     </ul>
   </div>
