@@ -9,7 +9,8 @@ class Kriteria extends CI_Controller{
 		$this->load->model('Model_Kriteria'); 
 	}
  
-	function index(){
+	function index()
+	{
 		$data['title'] = 'Kriteria Penilaian';
 		$data['kriteria'] = $this->Model_Kriteria->tampil_data();
 		$this->load->view('header', $data);
@@ -40,7 +41,8 @@ class Kriteria extends CI_Controller{
 		}
 	}
 
-	function delete($id_k){
+	function delete($id_k)
+	{
 		$id_k = $this->uri->segment(3);
 		if (empty($id_k))
         {
@@ -52,7 +54,8 @@ class Kriteria extends CI_Controller{
 		redirect('kriteria');
 	}
 
-	function edit($id_k){
+	function edit($id_k)
+	{
 		$id_k = $this->uri->segment(3);
 		if (empty($id_k))
         {
