@@ -8,60 +8,31 @@ Class Model_Cr_Rumah extends CI_Model{
 		parent::__construct();
 	}
 
-	function tampil_data(){
-		$query = $this->db->get('_altrumah');
-		return $query->result_array();
-	}
 
-	function tampil_data_rel(){
-		$this->db->select('a.id_a, b.nm_a, c.skor SUM(IF(a.id_a=C1,a.');
-		$this->db->from('_altrumah a');
-		$this->db->join('r_altrumah b', 'b.id_a=a.id_a');
-		$this->db->join('_crips c', 'b.id_cp=c.id_cp');
-		$this->db->join('_kriteria d', 'd.id_k=d.id_k');
-	}
+	function tampil_data($search = ''){
 
-	function combo_alter(){
-		$query = $this->db->get('_altrumah');
-		return $query->result();
-	}
+		$query = $this->db->query("SELECT r.*, a.nm_a, c.nm_cp
+        FROM r_altrumah r
+            INNER JOIN _kriteria k ON k.id_k=r.id_k
+            INNER JOIN _altrumah a ON a.id_a=r.id_a
+            LEFT JOIN _crips c ON c.id_cp = r.id_cp
+        WHERE (a.id_a LIKE '%".$search."%' OR a.nm_a LIKE '%".$search."%')
+        ORDER BY r.id_a, r.id_k");
+                                
+        return $query->result();
+    }
+	function baca_alt($ID){
 
-	function combo_harga(){
-		$query = $this->db->query('SELECT * FROM _crips WHERE id_k="C1" ORDER BY skor');
-		return $query->result();
-	}
-
-	function combo_lokasi(){
-		$query = $this->db->query('SELECT * FROM _crips WHERE id_k="C2" ORDER BY skor');
-		return $query->result();
-	}
-
-	function combo_luas(){
-		$query = $this->db->query('SELECT * FROM _crips WHERE id_k="C3" ORDER BY skor');
-		return $query->result();
-	}
-
-	function combo_tipe(){
-		$query = $this->db->query('SELECT * FROM _crips WHERE id_k="C4" ORDER BY skor');
-		return $query->result();
-	}
-
-	function combo_fasilitas(){
-		$query = $this->db->query('SELECT * FROM _crips WHERE id_k="C5" ORDER BY skor');
-		return $query->result();
-	}
-
-	function bacaid($id_r = 0)
-	{
-		if($id_r === 0)
-		{
-			$query =  $this->db->get('r_altrumah');
-			return $query->result_array();
-		}
-
-		$query = $this->db->get_where('r_altrumah', array('id_r' => $id_r));
-		return $query->row_array();
-	
+		 $query = $this->db->query("SELECT
+            r.*, a.nm_a, k.nm_k
+        FROM r_altrumah r 
+        	INNER JOIN _kriteria k ON k.id_k=r.id_k
+            INNER JOIN _altrumah a ON a.id_a=r.id_a
+            LEFT JOIN _crips c ON c.id_cp = r.id_cp
+        WHERE a.id_a='$ID' 
+        ORDER BY r.id_k");
+                
+        return $query->result();
 	}
 
 	function buat($id_r = NULL)
