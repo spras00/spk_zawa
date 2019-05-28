@@ -11,6 +11,9 @@ Tambah Data
 	<thead>
 		<tr>
 			<th>
+				ID RUMAH
+			</th>
+			<th>
 				NAMA RUMAH
 			</th>
 			<th>
@@ -35,6 +38,9 @@ Tambah Data
 		<?php
 		foreach ($rumah as $rm) {?>
 			<tr>
+				<td>
+					<?php echo $rm['id_a']; ?>
+				</td>
 				<td>
 					<?php echo $rm['nm_a']; ?>
 				</td>
