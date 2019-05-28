@@ -24,6 +24,7 @@ class Rumah extends CI_Controller{
 
 		$data['title'] = 'Input Data Rumah';
 
+		$this->form_validation->set_rules('id_a', 'ID RUMAH', 'required');
 		$this->form_validation->set_rules('nm_a', 'NAMA RUMAH', 'required');
 		$this->form_validation->set_rules('lokasi', 'LOKASI', 'required');
 		$this->form_validation->set_rules('harga', 'HARGA', 'trim|required');
@@ -38,7 +39,7 @@ class Rumah extends CI_Controller{
 			$this->load->view('footer');	
 		}else
 		{
-			$this->Model_Rumah->buat();
+			$this->Model_Rumah->buat($id_a);
 			redirect('rumah');
 		}
 	}
@@ -66,7 +67,8 @@ class Rumah extends CI_Controller{
 
         $data['title'] = 'Ubah Data Rumah';
 		$data['rumah'] = $this->Model_Rumah->bacaid($id_a);
-
+		
+		$this->form_validation->set_rules('id_a', 'ID RUMAH', 'required');
 		$this->form_validation->set_rules('nm_a', 'NAMA RUMAH', 'required');
 		$this->form_validation->set_rules('lokasi', 'LOKASI', 'required');
 		$this->form_validation->set_rules('harga', 'HARGA', 'trim|required');
@@ -81,7 +83,7 @@ class Rumah extends CI_Controller{
 			$this->load->view('footer');	
 		}else
 		{
-			$this->Model_Rumah->buat($id_a);
+			$this->Model_Rumah->ubah($id_a);
 			redirect('rumah');
 		}
 	}
