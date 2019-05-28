@@ -31,6 +31,26 @@ class Model_Rumah extends CI_Model{
 	{
 		
 		$data = array(
+			'id_a'=> $this->input->post('id_a'),
+			'nm_a'=> $this->input->post('nm_a'),
+			'lokasi'=> $this->input->post('lokasi'),
+			'harga'=> $this->input->post('harga'),
+			'luas'=> $this->input->post('luas'),
+			'tipe'=> $this->input->post('tipe'),
+			'fasilitas'=> $this->input->post('fasilitas')
+		);	      
+
+		if($id_a == NULL)
+		{	
+			$this->db->insert('_altrumah', $data);
+			$this->db->query("INSERT INTO r_altrumah(id_k, id_a, id_cp) SELECT id_k, '$data[id_a]', 0  FROM _kriteria");	
+		}
+	}
+
+	function ubah($id_a = NULL)
+	{
+		$data = array(
+			'id_a'=> $this->input->post('id_a'),
 			'nm_a'=> $this->input->post('nm_a'),
 			'lokasi'=> $this->input->post('lokasi'),
 			'harga'=> $this->input->post('harga'),
@@ -38,16 +58,11 @@ class Model_Rumah extends CI_Model{
 			'tipe'=> $this->input->post('tipe'),
 			'fasilitas'=> $this->input->post('fasilitas')
 		);
-
-		if($id_a == NULL)
-		{
-			return $this->db->insert('_altrumah', $data);	
-		}else
-		{
+		if($id_a = NULL){
 			$this->db->where('id_a', $id_a);
-			return $this->db->update('_altrumah', $data);
+		return $this->db->update('_altrumah', $data);
 		}
-		
+			
 	}
 
 	function hapus($id_a)
