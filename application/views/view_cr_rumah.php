@@ -1,48 +1,33 @@
 </div>	
+  <?php           
+            $relasi = array(); 
+            foreach ($rows as $row) {                
+                $alternatif[$row->id_a] = $row->nm_a;
+                $relasi[$row->id_a][$row->id_k] = $row->nm_cp;                
+            }                                
+        ?>
 <table align="center" class="table table-condensed">
-	<thead>
-		 <tr> 
-	    	<th rowspan='2'>Alternatif</th> 
-		    <th colspan='5'>Kriteria</th> 
-	  	</tr> 
-		<tr>
-			<th>
-				C1
-			</th>
-			<th>
-				C2
-			</th>
-			<th>
-				C3
-			</th>
-			<th>
-				C4
-			</th>
-			<th>
-				C5
-			</th>
-			<th></th>
-			<th></th>
-		</tr>
-	</thead>
-		<?php
-		foreach ($cr_rumah as $crm) {?>
-			<tr>
-				<th><?php echo $crm['nm_a']; ?></th>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td>
-					<a href="<?php echo base_url('cr_rumah/input/'.$crm['id_a']); ?>">
-						<button type="button" class="btn btn-default">
-							Edit
-  						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-						</button>
-					</a>
-				</td>
-			</tr> <?php
-		} ?>
+	  <thead><tr>
+                <th>Kode</th>
+                <th>Nama</th>
+                <?php 
+                $first = array_values($relasi);
+                foreach ($first[0] as $key => $val):?>
+                    <th><?=$key?></th>
+                <?php endforeach ?>
+                <th></th>
+            </tr></thead>    
+            <?php foreach ($alternatif as $key => $value):?>
+            <tr>
+                <td><?=$key?></td>
+                <td><?=$value?></td>
+                <?php foreach ($relasi[$key] as $val):?>
+                    <td><?=$val?></td>
+                <?php endforeach ?>
+                <td class="nw">
+                    <a class="btn btn-xs btn-warning" href="<?=site_url("cr_rumah/input/$key")?>">Ubah</a>
+                </td>
+            </tr>
+            <?php endforeach?>
 </table>
 </div>
