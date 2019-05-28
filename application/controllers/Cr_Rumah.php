@@ -11,39 +11,31 @@ class Cr_Rumah extends CI_Controller{
 
 	function index(){
 		$data['title'] = 'Data Crips Rumah';
-		$data['cr_rumah'] = $this->Model_Cr_Rumah->tampil_data();
+		$data['rows'] = $this->Model_Cr_Rumah->tampil_data($this->input->get('search'));   
 		$this->load->view('header', $data);
 		$this->load->view('view_cr_rumah', $data);
 		$this->load->view('footer');
 	}
 
-	function input(){
+	function input($ID = null){
 
-		$id_a = $this->uri->segment(3);
-		if (empty($id_a))
-        {
-            show_404();
-        }
+
 		$this->load->library('form_validation');
 
 		$data['title'] = 'Input Data Crips Rumah';
-		$data['alternatif'] = $this->Model_Cr_Rumah->combo_alter($id_a);
-		$data['harga'] = $this->Model_Cr_Rumah->combo_harga();
-		$data['lokasi'] = $this->Model_Cr_Rumah->combo_lokasi();
-		$data['luas'] = $this->Model_Cr_Rumah->combo_luas();
-		$data['tipe'] = $this->Model_Cr_Rumah->combo_tipe();
-		$data['fasilitas'] = $this->Model_Cr_Rumah->combo_fasilitas();
-
-
-		$this->form_validation->set_rules('alt', 'NAMA ALTERNATIF', 'required');
-		$this->form_validation->set_rules('harga', 'HARGA', 'required');
-		$this->form_validation->set_rules('lokasi', 'LOKASI', 'required');
-		$this->form_validation->set_rules('luas', 'LUAS TANAH', 'required');
-		$this->form_validation->set_rules('tipe', 'TIPE KAMAR', 'required');
-		$this->form_validation->set_rules('fasilitas', 'FASILITAS', 'required');
+		
+		$this->form_validation->set_rules( 'kode_crips[]', 'Crips', 'required|is_natural' );
 
 		if($this->form_validation->run() === FALSE)
 		{
+
+			 $data['rows'] = $this->Model_Cr_Rumah->baca_alt($ID);
+                
+                if($data['rows']) 
+                {                    
+                    $data['title'] .= $data['rows'][0]->nm_a;
+                }
+                
 			$this->load->view('header', $data);
 			$this->load->view('input_cr_rumah',$data);
 			$this->load->view('footer');	
