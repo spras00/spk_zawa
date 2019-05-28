@@ -7,6 +7,12 @@
 <?php echo form_open('rumah/input');?>
 <div class="form-horizontal">
 			<div class="form-group">
+				<label for="id_rumah" class="control-label col-sm-4">ID RUMAH</label>
+				<div class="col-xs-4">
+				<input type="text" class="form-control" name="id_a" placeholder="Nama Rumah">
+				</div>
+			</div>
+			<div class="form-group">
 				<label for="nm_alternatif" class="control-label col-sm-4">NAMA RUMAH</label>
 				<div class="col-xs-4">
 				<input type="text" class="form-control" name="nm_a" placeholder="Nama Rumah">
@@ -40,12 +46,7 @@
 			<div class="form-group">
 				<label for="fasilitas" class="control-label col-sm-4">FASILITAS</label>
 				<div class="col-xs-4">
-				<select class="form-control" name="fasilitas">
-					<option value="">	Pilih Fasiltias	</option>
-					<option value="Un Furnish">Un Furnish</option>
-					<option value="Semi Furnish">Semi Furnish</option>
-					<option value="Full Furnish">Full Furnish</option>
-				</select>
+				<input type="text" class="form-control" name="fasilitas" placeholder="Fasilitas">
 				</div>
 			</div>
 			<div class="form-group"> 
