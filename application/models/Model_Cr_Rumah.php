@@ -21,7 +21,7 @@ Class Model_Cr_Rumah extends CI_Model{
                                 
         return $query->result();
     }
-	function baca_alt($ID){
+	function baca_alt( $ID ){
 
 		 $query = $this->db->query("SELECT
             r.*, a.nm_a, k.nm_k
@@ -35,29 +35,13 @@ Class Model_Cr_Rumah extends CI_Model{
         return $query->result();
 	}
 
-	function buat($id_r = NULL)
+	function buat($id_cp)
 
 	{
-		
-		$data = array(
-			'id_r'=> $this->input->post('id_r'),
-			'id_a'=> $this->input->post('id_a'),
-			'id_k'=> $this->input->post('id_k'),
-			'id_cp'=> $this->input->post('id_cp')
-		);
-
-		if($id_r == NULL)
-		{
-			return $this->db->insert('r_altrumah', $data);	
-		}else
-		{
-			$this->db->where('id_r', $id_r);
-			return $this->db->update('r_altrumah', $data);
-		}
+		 foreach ($id_cp as $key => $val){                   
+            $this->db->update( 'r_altrumah', array('id_cp' =>$val), array('ID' => $key));   
+        } 
 		
 	}
-
-
-
 
 }
