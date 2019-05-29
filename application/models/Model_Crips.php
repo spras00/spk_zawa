@@ -35,6 +35,14 @@ Class Model_Crips extends CI_Model{
 		return $query->result();
 	}
 
+	function crips_kriteria($id_k)
+    {        
+        $this->db->where( array('id_k' => $id_k));  
+        $this->db->order_by('skor');      
+        $query = $this->db->get('_crips');
+        return $query->result();
+    }
+
 	function buat($id_cp = NULL)
 
 	{
