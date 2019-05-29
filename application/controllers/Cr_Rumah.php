@@ -7,6 +7,7 @@ class Cr_Rumah extends CI_Controller{
 		parent::__construct();
 		$this->load->library('form_validation');		
 		$this->load->model('Model_Cr_Rumah'); 
+		$this->load->model('Model_Crips');
 	}
 
 	function index(){
@@ -19,12 +20,9 @@ class Cr_Rumah extends CI_Controller{
 
 	function input($ID = null){
 
-
-		$this->load->library('form_validation');
-
-		$data['title'] = 'Input Data Crips Rumah';
+		$data['title'] = 'Data Crips ';
 		
-		$this->form_validation->set_rules( 'kode_crips[]', 'Crips', 'required|is_natural' );
+		$this->form_validation->set_rules( 'id_cp[]', 'Crips', 'required|is_natural' );
 
 		if($this->form_validation->run() === FALSE)
 		{
@@ -37,11 +35,11 @@ class Cr_Rumah extends CI_Controller{
                 }
                 
 			$this->load->view('header', $data);
-			$this->load->view('input_cr_rumah',$data);
+			$this->load->view('input_cr_rumah', $data);
 			$this->load->view('footer');	
 		}else
 		{
-			$this->Model_Cr_Rumah->buat();
+			$this->Model_Cr_Rumah->buat( $this->input->post('id_cp') );
 			redirect('cr_rumah');
 		}
 	}
