@@ -10,9 +10,9 @@
 		 <?php foreach($rows as $row): ?>              
             <div class="form-group">
                 <label><?=$row->nm_k?> <span class="text-danger">*</span></label>
-                <select class="form-control" name="id_cp[<?=$row->ID?>]">
+                <select class="form-control" name="id_cp[<?=$row->id_r?>]">
                     <option>Pilih Nilai</option>
-                    <?=option_crips( $row->id_k, set_value("id_cp[$row->ID]", $row->id_cp))?>
+                    <?=option_crips( $row->id_k, set_value("id_cp[$row->id_r]", $row->id_cp))?>
                 </select>
                 </select>
             </div>
