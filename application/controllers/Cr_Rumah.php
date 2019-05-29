@@ -18,16 +18,16 @@ class Cr_Rumah extends CI_Controller{
 		$this->load->view('footer');
 	}
 
-	function input($ID = null){
+	function input($id_r = null){
 
 		$data['title'] = 'Data Crips ';
 		
-		$this->form_validation->set_rules( 'id_cp[]', 'Crips', 'required|is_natural' );
+		$this->form_validation->set_rules( 'id_cp[]', 'Crips', 'required' );
 
 		if($this->form_validation->run() === FALSE)
 		{
 
-			 $data['rows'] = $this->Model_Cr_Rumah->baca_alt($ID);
+			 $data['rows'] = $this->Model_Cr_Rumah->baca_alt($id_r);
                 
                 if($data['rows']) 
                 {                    
