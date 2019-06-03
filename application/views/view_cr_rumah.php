@@ -24,7 +24,7 @@
                 <?php foreach ($relasi[$key] as $val):?>
                     <td><?=$val?></td>
                 <?php endforeach ?>
-                <td class="nw">
+                <td>
                     <a class="btn btn-xs btn-warning" href="<?=site_url("cr_rumah/input/$key")?>">Ubah</a>
                 </td>
             </tr>
