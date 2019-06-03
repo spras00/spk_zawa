@@ -1,4 +1,9 @@
 </div>
+ <?php           
+            foreach ($rows as $row) {                
+                $kriteria[$row->id_k] = $row->nm_k;             
+            }                                
+        ?>
 <table align="center" class="table table-condensed">
 	<thead>
 		<tr>
@@ -13,23 +18,23 @@
 			</th>
 		</tr>
 	</thead>
-		<?php
-		foreach ($kriteria as $kr) {?>
+		<?php 
+		foreach ($kriteria as $key => $value):?>
 			<tr>
 				<td>
-					<?php echo $kr['id_k']; ?>
+					<?=$key?>
 				</td>
 				<td>
-					<?php echo $kr['nm_k']; ?>
+					<?=$value?>
 				</td>
 				<td>
-					<a href="<?php echo base_url('crips/detail/'.$kr['id_k']); ?>">
+					<a href="<?=site_url("crips/detail/$key"); ?>">
 						<button type="button" class="btn btn-default">
   						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
-			</tr> <?php
-		} ?>
+			</tr>
+			<?php endforeach ?>
 </table>
 </div>
