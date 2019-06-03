@@ -9,14 +9,13 @@ Class Model_Cr_Rumah extends CI_Model{
 	}
 
 
-	function tampil_data($search = ''){
+	function tampil_data(){
 
 		$query = $this->db->query("SELECT r.*, a.nm_a, c.nm_cp
         FROM r_altrumah r
             INNER JOIN _kriteria k ON k.id_k=r.id_k
             INNER JOIN _altrumah a ON a.id_a=r.id_a
             LEFT JOIN _crips c ON c.id_cp = r.id_cp
-        WHERE (a.id_a LIKE '%".$search."%' OR a.nm_a LIKE '%".$search."%')
         ORDER BY r.id_a, r.id_k");
                                 
         return $query->result();
