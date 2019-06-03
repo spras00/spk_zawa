@@ -44,13 +44,13 @@ Tambah Data
 				<td>
 					<a href="<?php echo base_url('kriteria/edit/'.$kr['id_k']); ?>">
 						<button type="button" class="btn btn-default">
-							Edit
+							Ubah
   						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
 				<td>
-					<a href="<?php echo base_url('kriteria/delete/'.$kr['id_k']); ?>">
+					<a href="<?php echo base_url('kriteria/delete/'.$kr['id_k']); ?>" onclick="return confirm('Hapus Data Kriteria?');">
 						<button type="button" class="btn btn-danger">
 							Hapus
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
