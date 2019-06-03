@@ -10,12 +10,12 @@ Class Model_Crips extends CI_Model{
 
 	function tampil_data1(){
 		$query = $this->db->get('_kriteria');
-		return $query->result_array();
+		return $query->result();
 		}
 
 	function tampil_data2($id_k){
 		$query = $this->db->get_where('_crips', array('id_k' => $id_k));
-		return $query->result_array();
+		return $query->result();
 	}
 
 	function bacaid($id_cp = 0)
@@ -30,9 +30,9 @@ Class Model_Crips extends CI_Model{
 		return $query->row_array();
 	}
 
-	function combokriteria($id_k){
+	function kriteria($id_k){
 		$query = $this->db->get_where('_kriteria', array('id_k' => $id_k));
-		return $query->result();
+		return $query->row_array();
 	}
 
 	function crips_kriteria($id_k)
