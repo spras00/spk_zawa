@@ -1,14 +1,23 @@
 </div>
+ <?php           
+			$relasi = array();
+			$skor = array();  
+            foreach ($rows as $row) {                
+                $crips[$row->id_cp] = $row->nm_cp;
+                $relasi[$row->id_cp][$row->id_k] = $row->id_k;
+                $skor[$row->id_cp][$row->id_k] = $row->skor;
+            }                                
+        ?>
 <div class="btn header-btn pull-left">
-<a href="<?php echo site_url('crips/input/'.$id_k); ?>">
+<a href="<?php echo site_url('crips/input/'.$row->id_k); ?>">
 <button type="button" class="btn btn-default ">
 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 Tambah Data
 </button>
+</a>
 </div>
 <div class="btn header-btn pull-right">
-<a href="<?php echo site_url('crips/index'); ?>">
-<button type="button" class="btn btn-default ">
+<button type="button" onclick="location.href='<?php echo base_url();?>crips'" class="btn btn-default ">
 <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
 Kembali
 </button>
@@ -37,36 +46,39 @@ Kembali
 			</th>
 		</tr>
 	</thead>
-		<?php
-		foreach ($crips as $crp) {?>
+		<?php 
+		foreach ($crips as $key => $value):?>
 			<tr>
 				<td>
-					<?php echo $crp['id_cp']; ?>
+					<?=$key?>
 				</td>
 				<td>
-					<?php echo $crp['nm_cp']; ?>
+					<?=$value?>
 				</td>
-				<td>
-					<?php echo $crp['id_k']; ?>
+				 <?php foreach ($relasi[$key] as $val):?>
+                 <td><?=$val?></td>
+                <?php endforeach ?>
 				</td>
+				 <?php foreach ($skor[$key] as $valu):?>
+                 <td><?=$valu?></td>
+                <?php endforeach ?>
 				<td>
-					<?php echo $crp['skor']; ?>
-				</td>
-				<td>
-					<a href="<?php echo base_url('crips/edit/'.$crp['id_cp']); ?>">
+					<a href="<?=site_url("crips/edit/$key"); ?>">
 						<button type="button" class="btn btn-default">
+							Ubah
   						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
 				<td>
-					<a href="<?php echo base_url('crips/delete/'.$crp['id_cp']); ?>">
+					<a href="<?=site_url("crips/delete/$key"); ?>"  onclick="return confirm('Hapus Data Crips?');">
 						<button type="button" class="btn btn-danger">
+							Hapus
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
-			</tr> <?php
-		} ?>
+			</tr>
+		<?php endforeach ?>
 </table>
 </div>
