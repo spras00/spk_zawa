@@ -62,13 +62,13 @@ Tambah Data
 				<td>
 					<a href="<?php echo base_url('rumah/edit/'.$rm['id_a']); ?>">
 						<button type="button" class="btn btn-default">
-							Edit
+							Ubah
   						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
 				<td>
-					<a href="<?php echo base_url('rumah/delete/'.$rm['id_a']); ?>">
+					<a href="<?php echo base_url('rumah/delete/'.$rm['id_a']); ?>" onclick="return confirm('Hapus Data Rumah?');">
 						<button type="button" class="btn btn-danger">
 							Hapus
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
