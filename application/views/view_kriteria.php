@@ -1,4 +1,5 @@
 </div>
+<div class="table-responsive">
 <div class="btn header-btn pull-right">
 <a href="<?php echo site_url('kriteria/input'); ?>">
 <button type="button" class="btn btn-default ">
@@ -7,7 +8,7 @@ Tambah Data
 </button>
 </a>
 </div>	
-<table align="center" class="table table-condensed">
+<table align="center" class="table table-hover">
 	<thead>
 		<tr>
 			<th>
@@ -41,7 +42,7 @@ Tambah Data
 				<td>
 					<?php echo $kr['bobot']; ?>
 				</td>
-				<td>
+				<td align="center" class="col-md-1">
 					<a href="<?php echo base_url('kriteria/edit/'.$kr['id_k']); ?>">
 						<button type="button" class="btn btn-default">
 							Ubah
@@ -49,7 +50,7 @@ Tambah Data
 						</button>
 					</a>
 				</td>
-				<td>
+				<td align="center" class="col-md-1">
 					<a href="<?php echo base_url('kriteria/delete/'.$kr['id_k']); ?>" onclick="return confirm('Hapus Data Kriteria?');">
 						<button type="button" class="btn btn-danger">
 							Hapus
@@ -60,4 +61,5 @@ Tambah Data
 			</tr> <?php
 		} ?>
 </table>
+</div>
 </div>
