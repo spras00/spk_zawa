@@ -18,6 +18,14 @@ Class Model_Crips extends CI_Model{
 		return $query->result();
 	}
 
+	function tampil_hitung(){
+        $this->db->join('_kriteria', '_kriteria.id_k=_crips.id_k');
+        $this->db->order_by( '_kriteria.id_k' );
+        $this->db->order_by('skor');
+        $query = $this->db->get('_crips');
+        return $query->result();
+	}
+
 	function bacaid($id_cp = 0)
 	{
 		if($id_cp === 0)
