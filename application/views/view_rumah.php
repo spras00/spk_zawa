@@ -7,7 +7,7 @@ Tambah Data
 </button>
 </a>
 </div>	
-<table align="center" class="table table-condensed">
+<table align="center" class="table table-hover">
 	<thead>
 		<tr>
 			<th>
@@ -59,7 +59,7 @@ Tambah Data
 				<td>
 					<?php echo $rm['fasilitas']; ?>
 				</td>
-				<td>
+				<td align="center" class="col-md-1">
 					<a href="<?php echo base_url('rumah/edit/'.$rm['id_a']); ?>">
 						<button type="button" class="btn btn-default">
 							Ubah
@@ -67,7 +67,7 @@ Tambah Data
 						</button>
 					</a>
 				</td>
-				<td>
+				<td align="center" class="col-md-1">
 					<a href="<?php echo base_url('rumah/delete/'.$rm['id_a']); ?>" onclick="return confirm('Hapus Data Rumah?');">
 						<button type="button" class="btn btn-danger">
 							Hapus
