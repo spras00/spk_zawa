@@ -29,7 +29,7 @@
 				<div class="col-xs-4">
 				<select class="form-control" name="skor">
 					<option value="">	Pilih Skor 	</option>
-					<option value="0">0</option>
+					<option value="5">5</option>
 					<option value="25">25</option>
 					<option value="50">50</option>
 					<option value="75">75</option>
@@ -40,6 +40,7 @@
 			<div class="form-group"> 
     					<div class="col-sm-offset-4 col-sm-4">
       					<button type="submit" class="btn btn-success btn-block">Simpan</button>
+      					<button type="reset" onclick="location.href='<?php echo base_url();?>crips/detail/<?=$crips['id_k']?>'" class="btn btn-danger btn-block">Batal</button>
   						</div>
   			</div>
 	</div>
