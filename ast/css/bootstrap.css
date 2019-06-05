@@ -260,7 +260,6 @@ th {
     border: 1px solid #ddd !important;
   }
 }
-
 @font-face {
   font-family: 'Glyphicons Halflings';
 
@@ -1407,14 +1406,6 @@ a.bg-warning:focus {
 a.bg-danger:hover,
 a.bg-danger:focus {
   background-color: #e4b9b9;
-}
-a.b-link:link{
-  text-decoration: none;
-}
-.header-btn{
-  top: 2px;
-}
-
 }
 .page-header {
   padding-bottom: 9px;
