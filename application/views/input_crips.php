@@ -29,7 +29,7 @@
 				<div class="col-xs-4">
 				<select class="form-control" name="skor">
 					<option value="">	Pilih Skor 	</option>
-					<option value="0">0</option>
+					<option value="5">5</option>
 					<option value="25">25</option>
 					<option value="50">50</option>
 					<option value="75">75</option>
