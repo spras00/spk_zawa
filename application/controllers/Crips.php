@@ -39,8 +39,6 @@ Class Crips extends CI_Controller {
             show_404();
         }
 
-
-		$this->load->library('form_validation');
 		$data['title'] = 'Input Data Crips';
 		$data['kriteria'] = $this->Model_Crips->kriteria($id_k);
 
