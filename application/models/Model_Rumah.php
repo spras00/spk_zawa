@@ -13,6 +13,11 @@ class Model_Rumah extends CI_Model{
 		return $query->result_array();
 	}
 
+	function tampil_hitung(){
+		$query = $this->db->get('_altrumah');
+		return $query->result();
+	}
+
 	function bacaid($id_a = 0)
 	{
 		if($id_a === 0)
@@ -58,9 +63,9 @@ class Model_Rumah extends CI_Model{
 			'tipe'=> $this->input->post('tipe'),
 			'fasilitas'=> $this->input->post('fasilitas')
 		);
-		if($id_a = NULL){
+		if($id_a != NULL){
 			$this->db->where('id_a', $id_a);
-		return $this->db->update('_altrumah', $data);
+			return $this->db->update('_altrumah', $data);
 		}
 			
 	}
