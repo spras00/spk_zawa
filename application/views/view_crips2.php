@@ -23,7 +23,7 @@ Kembali
 </button>
 </a>
 </div>
-<table align="center" class="table table-condensed">
+<table align="center" class="table table-hover">
 	<thead>
 		<tr>
 			<th>
@@ -62,7 +62,7 @@ Kembali
 				 <?php foreach ($skor[$key] as $valu):?>
                  <td><?=$valu?></td>
                 <?php endforeach ?>
-				<td>
+				<td align="center" class="col-md-1">
 					<a href="<?=site_url("crips/edit/$key"); ?>">
 						<button type="button" class="btn btn-default">
 							Ubah
@@ -70,7 +70,7 @@ Kembali
 						</button>
 					</a>
 				</td>
-				<td>
+				<td align="center" class="col-md-1">	
 					<a href="<?=site_url("crips/delete/$key"); ?>"  onclick="return confirm('Hapus Data Crips?');">
 						<button type="button" class="btn btn-danger">
 							Hapus
