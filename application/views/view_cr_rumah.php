@@ -6,7 +6,7 @@
                 $relasi[$row->id_a][$row->id_k] = $row->nm_cp;                
             }                                
         ?>
-<table align="center" class="table table-condensed">
+<table align="center" class="table table-hover">
 	  <thead><tr>
                 <th>Kode</th>
                 <th>Nama</th>
@@ -24,8 +24,8 @@
                 <?php foreach ($relasi[$key] as $val):?>
                     <td><?=$val?></td>
                 <?php endforeach ?>
-                <td>
-                    <a class="btn btn-xs btn-warning" href="<?=site_url("cr_rumah/input/$key")?>">Ubah</a>
+                <td align="center" class="col-md-1">
+                    <a class="btn btn-xs btn-info" href="<?=site_url("cr_rumah/input/$key")?>">Ubah</a>
                 </td>
             </tr>
             <?php endforeach?>
