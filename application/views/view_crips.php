@@ -4,7 +4,7 @@
                 $kriteria[$row->id_k] = $row->nm_k;             
             }                                
         ?>
-<table align="center" class="table table-condensed">
+<table align="center" class="table table-hover">
 	<thead>
 		<tr>
 			<th>
@@ -14,22 +14,22 @@
 				NAMA KRITERIA
 			</th>
 			<th>
-				LIHAT NILAI CRIPS
 			</th>
 		</tr>
 	</thead>
 		<?php 
 		foreach ($kriteria as $key => $value):?>
 			<tr>
-				<td>
+				<td class="col-md-4">
 					<?=$key?>
 				</td>
-				<td>
+				<td class="col-md-4">
 					<?=$value?>
 				</td>
-				<td>
+				<td align="center">
 					<a href="<?=site_url("crips/detail/$key"); ?>">
 						<button type="button" class="btn btn-default">
+							Lihat Nilai
   						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
 						</button>
 					</a>
