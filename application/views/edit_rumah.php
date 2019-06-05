@@ -53,6 +53,7 @@
 			<div class="form-group"> 
     					<div class="col-sm-offset-4 col-sm-4">
       					<button type="submit" class="btn btn-success btn-block">Simpan</button>
+      					<button type="reset" onclick="location.href='<?php echo base_url();?>Rumah'" class="btn btn-danger btn-block">Batal</button>
   						</div>
   			</div>
 	</div>
