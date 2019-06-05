@@ -13,6 +13,11 @@ class Model_Kriteria extends CI_Model{
 		return $query->result_array();
 	}
 
+	function tampil_hitung(){
+		$query = $this->db->get('_kriteria');
+		return $query->result();
+	}
+
 	function bacaid($id_k = 0)
 	{
 		if($id_k === 0)
