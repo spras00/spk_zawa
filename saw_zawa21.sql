@@ -1,5 +1,5 @@
-﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.26-MariaDB)
-# Date: 2019-05-28 17:06:17
+﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.16-MariaDB)
+# Date: 2019-06-10 22:31:30
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -7,7 +7,6 @@
 # Structure for table "_altrumah"
 #
 
-DROP TABLE IF EXISTS `_altrumah`;
 CREATE TABLE `_altrumah` (
   `id_a` varchar(5) NOT NULL DEFAULT '',
   `nm_a` varchar(75) NOT NULL DEFAULT '',
@@ -23,13 +22,12 @@ CREATE TABLE `_altrumah` (
 # Data for table "_altrumah"
 #
 
-INSERT INTO `_altrumah` VALUES ('A1','Rumah Telaga Kahuripan','Parung Bogor',650000000,180,'3','Kitchen Set, Closet Duduk, AC');
+REPLACE INTO `_altrumah` VALUES ('A01','Rumah Telaga Kahuripan','Parung Bogor',650000000,180,'3','Kitchen Set, Closet Duduk, AC'),('A02','Cluster Perum Villa Pamulang','Tangerang',590000000,90,'2','Ac, Bathub, Kitchen Set, Pompa Air'),('A03','KS .Tubun Jakarta Barat','DKI Jakarta',1100000000,100,'3','Ac, Bathub, Kitchen Set, Pompa Air'),('A04','Vila Mutiara Cibubur','Depok',1600000000,120,'3','Kosong'),('A05','Puri Botanical Kebon Jeruk Jakarta Barat','DKI Jakarta',2147483647,70,'2','Kosong'),('A06','Komplek De Green Villa Mutiara Bandung','Bandung',1250000000,148,'2','AC, Kitchen Set'),('A07','Paramount Gading Serpong','Tangerang',2147483647,187,'3','Full Furnish'),('A08','Tebet Dalam ','DKI Jakarta',2147483647,157,'7','Ac, Shower, Kitchen Set, Pompa Air'),('A09','Tanjung Duren','DKI Jakarta',2100000000,55,'5','Ac, Shower, Kitchen Set, Pompa Air'),('A10','Bintaro','DKI Jakarta',2147483647,180,'5','Ac, Bathub, Kitchen Set, Pompa Air');
 
 #
 # Structure for table "_kriteria"
 #
 
-DROP TABLE IF EXISTS `_kriteria`;
 CREATE TABLE `_kriteria` (
   `id_k` varchar(5) NOT NULL,
   `nm_k` varchar(50) NOT NULL DEFAULT '',
@@ -42,13 +40,12 @@ CREATE TABLE `_kriteria` (
 # Data for table "_kriteria"
 #
 
-INSERT INTO `_kriteria` VALUES ('C1','HARGA','0',25),('C2','LOKASI','1',25),('C3','LUAS','1',15),('C4','TIPE','1',15),('C5','FASILITAS','1',20);
+REPLACE INTO `_kriteria` VALUES ('C1','HARGA','0',25),('C2','LOKASI','1',25),('C3','LUAS','1',15),('C4','TIPE','1',15),('C5','FASILITAS','1',20);
 
 #
 # Structure for table "_crips"
 #
 
-DROP TABLE IF EXISTS `_crips`;
 CREATE TABLE `_crips` (
   `id_cp` varchar(4) NOT NULL,
   `id_k` varchar(5) NOT NULL,
@@ -63,13 +60,12 @@ CREATE TABLE `_crips` (
 # Data for table "_crips"
 #
 
-INSERT INTO `_crips` VALUES ('CR11','C1','< 1 Milyar Rupiah',100),('CR12','C1','1 - 2 Milyar Rupiah',75),('CR13','C1','2 - 3 Milyar Rupiah',50),('CR14','C1','3 - 4 Milyar Rupiah',25),('CR15','C1','4 - 5 Milyar Rupiah',0),('CR21','C2','Jakarta',100),('CR22','C2','Botedabek',75),('CR23','C2','Luar Jabodetabek',50),('CR31','C3','>= 150 m2',100),('CR32','C3','<=100 <150',75),('CR33','C3','<50 <100',50),('CR34','C3','<=50',25),('CR41','C4','>= 4 Kamar Tidur',100),('CR42','C4','3 Kamar Tidur',75),('CR43','C4','2 Kamar Tidur',50),('CR44','C4','1 Kamar Tidur',25),('CR51','C5','Full Furnish',100),('CR52','C5','Semi Furnish',75),('CR53','C5','Un Furnish',50);
+REPLACE INTO `_crips` VALUES ('CR11','C1','< 1 Milyar Rupiah',100),('CR12','C1','1 - 2 Milyar Rupiah',75),('CR13','C1','2 - 3 Milyar Rupiah',50),('CR14','C1','3 - 4 Milyar Rupiah',25),('CR15','C1','4 - 5 Milyar Rupiah',5),('CR21','C2','Jakarta',100),('CR22','C2','Botedabek',75),('CR23','C2','Luar Jabodetabek',50),('CR31','C3','>= 150 m2',100),('CR32','C3','<=100 <150',75),('CR33','C3','<50 <100',50),('CR34','C3','<=50',25),('CR41','C4','>= 4 Kamar Tidur',100),('CR42','C4','3 Kamar Tidur',75),('CR43','C4','2 Kamar Tidur',50),('CR44','C4','1 Kamar Tidur',25),('CR51','C5','Full Furnish',100),('CR52','C5','Semi Furnish',75),('CR53','C5','Un Furnish',50);
 
 #
 # Structure for table "_user"
 #
 
-DROP TABLE IF EXISTS `_user`;
 CREATE TABLE `_user` (
   `user` varchar(16) NOT NULL,
   `pwd` varchar(16) NOT NULL
@@ -79,23 +75,22 @@ CREATE TABLE `_user` (
 # Data for table "_user"
 #
 
-INSERT INTO `_user` VALUES ('admin','admin');
+REPLACE INTO `_user` VALUES ('admin','admin');
 
 #
 # Structure for table "r_altrumah"
 #
 
-DROP TABLE IF EXISTS `r_altrumah`;
 CREATE TABLE `r_altrumah` (
   `id_r` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `id_a` varchar(5) NOT NULL DEFAULT '0',
   `id_k` varchar(5) NOT NULL,
   `id_cp` varchar(4) NOT NULL,
   PRIMARY KEY (`id_r`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "r_altrumah"
 #
 
-INSERT INTO `r_altrumah` VALUES (43,'A1','C1','0'),(44,'A1','C2','0'),(45,'A1','C3','0'),(46,'A1','C4','0'),(47,'A1','C5','0');
+REPLACE INTO `r_altrumah` VALUES (43,'A01','C1','CR11'),(44,'A01','C2','CR22'),(45,'A01','C3','CR31'),(46,'A01','C4','CR42'),(47,'A01','C5','CR52'),(48,'A02','C1','CR11'),(49,'A02','C2','CR22'),(50,'A02','C3','CR33'),(51,'A02','C4','CR43'),(52,'A02','C5','CR52'),(55,'A03','C1','CR12'),(56,'A03','C2','CR21'),(57,'A03','C3','CR32'),(58,'A03','C4','CR42'),(59,'A03','C5','CR52'),(62,'A04','C1','CR12'),(63,'A04','C2','CR22'),(64,'A04','C3','CR32'),(65,'A04','C4','CR42'),(66,'A04','C5','CR53'),(69,'A05','C1','CR13'),(70,'A05','C2','CR21'),(71,'A05','C3','CR33'),(72,'A05','C4','CR43'),(73,'A05','C5','CR53'),(76,'A06','C1','CR12'),(77,'A06','C2','CR23'),(78,'A06','C3','CR32'),(79,'A06','C4','CR43'),(80,'A06','C5','CR52'),(83,'A07','C1','CR13'),(84,'A07','C2','CR22'),(85,'A07','C3','CR31'),(86,'A07','C4','CR42'),(87,'A07','C5','CR51'),(90,'A08','C1','CR13'),(91,'A08','C2','CR21'),(92,'A08','C3','CR31'),(93,'A08','C4','CR41'),(94,'A08','C5','CR52'),(97,'A09','C1','CR13'),(98,'A09','C2','CR21'),(99,'A09','C3','CR33'),(100,'A09','C4','CR41'),(101,'A09','C5','CR52'),(104,'A10','C1','CR15'),(105,'A10','C2','CR21'),(106,'A10','C3','CR31'),(107,'A10','C4','CR41'),(108,'A10','C5','CR52');
