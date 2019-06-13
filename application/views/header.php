@@ -41,3 +41,4 @@
     <div class="panel panel-default">
       <div class="page-header">
         <h1 align="center"><?php echo $title; ?></h1>
+        
