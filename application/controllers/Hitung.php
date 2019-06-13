@@ -140,16 +140,19 @@ class Hitung extends CI_Controller{
 
 	function cetak( $ID = NULL)
     {
+        $data['title'] = 'Cetak Hasil Rank';
         $data['kriteria'] = $this->get_kriteria();
-        $data['alternatif'] = $this->get_alternatif();
         $data['crips'] = $this->get_crips();
+        $data['rumah'] = $this->get_rumah();
         $data['matriks'] = $this->matriks();
         $data['normal'] = $this->normalisasi();
         $data['hasil'] = $this->hasil();
         $data['total'] = $this->total();
         $data['rank'] = $this->rank();
-        
-        
+
+        $this->load->view('header_hitung', $data);
+        $this->load->view('print_hitung', $data);
+        $this->load->view('footer');
     }
 
 }	
