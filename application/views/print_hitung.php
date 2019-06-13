@@ -1,5 +1,4 @@
-<h1>Laporan Perhitungan</h1>
-<table>
+<table class="table table-collapse">
     <tr><thead>
         <th>#</th>
         <?php foreach($kriteria as $key => $val):?>
