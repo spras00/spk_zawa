@@ -71,8 +71,8 @@ class Model_Rumah extends CI_Model{
 	}
 
 	function hapus($id_a)
-	{
-		$this->db->where('id_a', $id_a);
-		return $this->db->delete('_altrumah');
+	{	
+		$this->db->delete('_altrumah', array('id_a' => $id_a));
+		$this->db->delete('r_altrumah', array('id_a' => $id_a));
 	}
 }
