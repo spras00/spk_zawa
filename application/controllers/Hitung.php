@@ -14,6 +14,10 @@ class Hitung extends CI_Controller{
  
 	function __construct(){
 		parent::__construct();
+        if (! $this->session->userdata('username'))
+        {
+            redirect('login');
+        }
 		$this->load->model('Model_Kriteria'); 
 		$this->load->model('Model_Rumah');
 		$this->load->model('Model_Crips');
