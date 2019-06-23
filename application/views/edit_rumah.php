@@ -1,10 +1,5 @@
 </div>
-<?php if (validation_errors()){
-    echo ' <div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times</button><b>You\'ve made some errors! Please check them below: <br><br></b>' ;
-    echo validation_errors();
-    echo '</div>';                                 
-}
-?>
+<?=print_error()?>
 <?php echo form_open('rumah/edit/'.$rumah['id_a']);?>
 <div class="form-horizontal">
 			<div class="form-group">
