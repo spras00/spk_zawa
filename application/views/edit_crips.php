@@ -1,9 +1,5 @@
-<?php if (validation_errors()){
-    echo ' <div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times</button><b>You\'ve made some errors! Please check them below: <br><br></b>' ;
-    echo validation_errors();
-    echo '</div>';                                 
-}
-?>
+</div>
+<?=print_error()?>
 <?php echo form_open('crips/edit/'.$crips['id_cp']);?>
 <div class="form-horizontal">
 			<div class="form-group">
