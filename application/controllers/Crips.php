@@ -5,6 +5,10 @@ Class Crips extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		if (! $this->session->userdata('username'))
+        {
+            redirect('login');
+        }
 		$this->load->library('form_validation');		
 		$this->load->model('Model_Crips'); 
 	}
