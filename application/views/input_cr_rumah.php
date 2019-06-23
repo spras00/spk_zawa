@@ -1,9 +1,4 @@
-<?php if (validation_errors()){
-    echo ' <div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert">&times</button><b>You\'ve made some errors! Please check them below: <br><br></b>' ;
-    echo validation_errors();
-    echo '</div>';                                 
-}
-?>
+<?=print_error()?>
 <?php echo form_open('cr_rumah/input/'.$rows[0]->id_a );?>
 <div class="form-horizontal">
     <div class="col-md-offset-4 col-md-4">
@@ -11,7 +6,7 @@
             <div class="form-group">
                 <label><?=$row->nm_k?> <span class="text-danger">*</span></label>
                 <select class="form-control" name="id_cp[<?=$row->id_r?>]">
-                    <option>Pilih Nilai</option>
+                    <option value="">Pilih Nilai</option>
                     <?=option_crips( $row->id_k, set_value("id_cp[$row->id_r]", $row->id_cp))?>
                 </select>
                 </select>
