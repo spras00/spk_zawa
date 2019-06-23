@@ -39,10 +39,10 @@ Kembali
 				SKOR
 			</th>
 			<th>
-				EDIT
+				
 			</th>
 			<th>
-				HAPUS
+				
 			</th>
 		</tr>
 	</thead>
