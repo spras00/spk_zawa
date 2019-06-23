@@ -16,4 +16,12 @@
     return $a;
     }
 
+    function print_error(){
+
+    if (validation_errors()){
+        echo ' <div class="alert alert-danger alret-dismissible fade in"><button type="button" class="close" data-dismiss="alert" aria-label="close">&times</button><b>';
+        echo validation_errors();
+        echo '</b></div>';                                 
+        }
+    }
 ?>
