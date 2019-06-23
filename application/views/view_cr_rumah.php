@@ -8,8 +8,8 @@
         ?>
 <table align="center" class="table table-hover">
 	  <thead><tr>
-                <th>Kode</th>
-                <th>Nama</th>
+                <th>ID Rumah</th>
+                <th>Nama Rumah</th>
                 <?php 
                 $first = array_values($relasi);
                 foreach ($first[0] as $key => $val):?>
