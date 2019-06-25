@@ -18,7 +18,7 @@
           <a class="navbar-brand" href="<?php echo site_url('#'); ?>">Sistem Penunjang Keputusan</a>
         </div>
     <ul class="nav navbar-nav navbar-right">
-      <li>
+       <li>
         <a href="<?php echo site_url('rumah'); ?>">Data Rumah</a>
       </li>
       <li>
@@ -32,6 +32,9 @@
       </li>
       <li>
         <a href="<?php echo site_url('hitung'); ?>">Perhitungan SAW</a>
+      </li>
+      <li>
+        <a href="<?php echo site_url('login/logout'); ?>">Keluar</a>
       </li>
     </ul>
   </div>
