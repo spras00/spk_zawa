@@ -15,7 +15,7 @@ class Cr_Rumah extends CI_Controller{
 	}
 
 	function index(){
-		$data['title'] = 'Data Crips Rumah';
+		$data['title'] = 'Data Nilai Rumah';
 		$data['rows'] = $this->Model_Cr_Rumah->tampil_data();   
 		$this->load->view('header', $data);
 		$this->load->view('view_cr_rumah', $data);
