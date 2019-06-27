@@ -5,7 +5,7 @@ class Model_Login extends CI_Model {
 
 		$this->db->where('user', $user);
 		$this->db->where('pwd', $pass);
-		$query = $this->db->get('_user');
+		$query = $this->db->get('user');
 
 		if($query->num_rows() > 0){
 			return true;
