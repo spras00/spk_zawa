@@ -1,7 +1,8 @@
 <?php
 class Login extends CI_Controller {
     
-    public function __construct()
+    function __construct()
+
     {
         parent::__construct();
         $this->load->model('Model_Login');
@@ -9,6 +10,7 @@ class Login extends CI_Controller {
     }
 
     function index()
+
     {   
         $this->load->library('form_validation');
         $this->form_validation->set_rules('username','USERNAME','required');  
@@ -53,11 +55,12 @@ class Login extends CI_Controller {
         
     }
     
-    function logout(){
+    function logout()
+
+    {
         $this->session->sess_destroy();
         redirect();
     }
-
 
 }
 
