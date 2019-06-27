@@ -3,7 +3,8 @@
 
 Class Crips extends CI_Controller {
 
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 		if (! $this->session->userdata('username'))
         {
@@ -14,29 +15,32 @@ Class Crips extends CI_Controller {
 	}
 
 
-	function index(){
-		$data['title'] = 'Crips Kriteria';
+	function index()
+	{
+		$data['title'] = ' Nilai Crips Kriteria';
 		$data['rows'] = $this->Model_Crips->tampil_data1();
 		$this->load->view('header', $data);
 		$this->load->view('view_crips', $data);
 		$this->load->view('footer');
 	}
 
-	function detail(){
+	function detail()
+	{
         $id_k = $this->uri->segment(3);
 		if (empty($id_k))
         {
             show_404();
         }
 
-		$data['title'] = 'Detail Crips Kriteria';
+		$data['title'] = 'Detail Crips Kriteria $id_k';
 		$data['rows'] = $this->Model_Crips->tampil_data2($id_k);
 		$this->load->view('header', $data);
 		$this->load->view('view_crips2', $data);
 		$this->load->view('footer');
 	}
 
-	function input($id_k){
+	function input($id_k)
+	{
 		$id_k = $this->uri->segment(3);
 		if (empty($id_k))
         {
@@ -63,7 +67,8 @@ Class Crips extends CI_Controller {
 		}
 	}
 
-	function delete($id_cp){
+	function delete($id_cp)
+	{
 		$id_cp = $this->uri->segment(3);
 		if (empty($id_cp))
         {
@@ -75,7 +80,8 @@ Class Crips extends CI_Controller {
 		redirect('crips');
 	}
 
-	function edit($id_cp){
+	function edit($id_cp)
+	{
 		$id_cp = $this->uri->segment(3);
 		if (empty($id_cp))
         {
