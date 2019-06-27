@@ -3,7 +3,8 @@
  
 class Cr_Rumah extends CI_Controller{
  
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 		if (! $this->session->userdata('username'))
         {
@@ -14,15 +15,17 @@ class Cr_Rumah extends CI_Controller{
 		$this->load->model('Model_Crips');
 	}
 
-	function index(){
-		$data['title'] = 'Data Nilai Rumah';
+	function index()
+	{
+		$data['title'] = 'Nilai Crips Rumah';
 		$data['rows'] = $this->Model_Cr_Rumah->tampil_data();   
 		$this->load->view('header', $data);
 		$this->load->view('view_cr_rumah', $data);
 		$this->load->view('footer');
 	}
 
-	function input($id_r = null){
+	function input($id_r = null)
+	{
 
 		$data['title'] = 'Data Crips ';
 		
@@ -47,4 +50,5 @@ class Cr_Rumah extends CI_Controller{
 			redirect('cr_rumah');
 		}
 	}
+	
 }
