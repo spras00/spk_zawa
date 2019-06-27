@@ -9,20 +9,20 @@ Class Model_Crips extends CI_Model{
 	}
 
 	function tampil_data1(){
-		$query = $this->db->get('_kriteria');
+		$query = $this->db->get('kriteria');
 		return $query->result();
 		}
 
 	function tampil_data2($id_k){
-		$query = $this->db->get_where('_crips', array('id_k' => $id_k));
+		$query = $this->db->get_where('crips', array('id_k' => $id_k));
 		return $query->result();
 	}
 
 	function tampil_hitung(){
-        $this->db->join('_kriteria', '_kriteria.id_k=_crips.id_k');
-        $this->db->order_by( '_kriteria.id_k' );
+        $this->db->join('kriteria', 'kriteria.id_k=crips.id_k');
+        $this->db->order_by( 'kriteria.id_k' );
         $this->db->order_by('skor');
-        $query = $this->db->get('_crips');
+        $query = $this->db->get('crips');
         return $query->result();
 	}
 
@@ -30,16 +30,16 @@ Class Model_Crips extends CI_Model{
 	{
 		if($id_cp === 0)
 		{
-			$query =  $this->db->get('_crips');
+			$query =  $this->db->get('crips');
 			return $query->result_array();
 		}
 
-		$query = $this->db->get_where('_crips', array('id_cp' => $id_cp));
+		$query = $this->db->get_where('crips', array('id_cp' => $id_cp));
 		return $query->row_array();
 	}
 
 	function kriteria($id_k){
-		$query = $this->db->get_where('_kriteria', array('id_k' => $id_k));
+		$query = $this->db->get_where('kriteria', array('id_k' => $id_k));
 		return $query->row_array();
 	}
 
@@ -47,7 +47,7 @@ Class Model_Crips extends CI_Model{
     {        
         $this->db->where( array('id_k' => $id_k));  
         $this->db->order_by('skor');      
-        $query = $this->db->get('_crips');
+        $query = $this->db->get('crips');
         return $query->result();
     }
 
@@ -64,11 +64,11 @@ Class Model_Crips extends CI_Model{
 
 		if($id_cp == NULL)
 		{
-			return $this->db->insert('_crips', $data);	
+			return $this->db->insert('crips', $data);	
 		}else
 		{
 			$this->db->where('id_cp', $id_cp);
-			return $this->db->update('_crips', $data);
+			return $this->db->update('crips', $data);
 		}
 		
 	}
@@ -76,7 +76,7 @@ Class Model_Crips extends CI_Model{
 	function hapus($id_cp)
 	{
 		$this->db->where('id_cp', $id_cp);
-		return $this->db->delete('_crips');
+		return $this->db->delete('crips');
 	}
 
 }
