@@ -9,12 +9,12 @@ class Model_Kriteria extends CI_Model{
 	}
 
 	function tampil_data(){
-		$query = $this->db->get('_kriteria');
+		$query = $this->db->get('kriteria');
 		return $query->result_array();
 	}
 
 	function tampil_hitung(){
-		$query = $this->db->get('_kriteria');
+		$query = $this->db->get('kriteria');
 		return $query->result();
 	}
 
@@ -22,11 +22,11 @@ class Model_Kriteria extends CI_Model{
 	{
 		if($id_k === 0)
 		{
-			$query =  $this->db->get('_kriteria');
+			$query =  $this->db->get('kriteria');
 			return $query->result_array();
 		}
 
-		$query = $this->db->get_where('_kriteria', array('id_k' => $id_k));
+		$query = $this->db->get_where('kriteria', array('id_k' => $id_k));
 		return $query->row_array();
 	
 	}
@@ -44,12 +44,12 @@ class Model_Kriteria extends CI_Model{
 
 		if($id_k == NULL)
 		{
-			$this->db->insert('_kriteria', $data);
-			$this->db->query("INSERT INTO r_altrumah(id_k, id_a, id_cp) SELECT '$data[id_k]', id_a, 0  FROM _altrumah"); 	
+			$this->db->insert('kriteria', $data);
+			$this->db->query("INSERT INTO r_altrumah(id_k, id_a, id_cp) SELECT '$data[id_k]', id_a, 0  FROM altrumah"); 	
 		}else
 		{
 			$this->db->where('id_k', $id_k);
-			return $this->db->update('_kriteria', $data);
+			return $this->db->update('kriteria', $data);
 		}
 		
 	}
@@ -57,6 +57,6 @@ class Model_Kriteria extends CI_Model{
 	function hapus($id_k)
 	{
 		$this->db->delete('r_altrumah', array('id_k' => $id_k));
-		$this->db->delete('_kriteria', array('id_k' => $id_k));
+		$this->db->delete('kriteria', array('id_k' => $id_k));
 	}
 }
