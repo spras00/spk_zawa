@@ -32,7 +32,7 @@ Class Crips extends CI_Controller {
             show_404();
         }
 
-		$data['title'] = 'Detail Crips Kriteria $id_k';
+		$data['title'] = 'Detail Crips Kriteria';
 		$data['rows'] = $this->Model_Crips->tampil_data2($id_k);
 		$this->load->view('header', $data);
 		$this->load->view('view_crips2', $data);
