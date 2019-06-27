@@ -3,17 +3,19 @@
  
 class Rumah extends CI_Controller{
  
-	function __construct(){
+	function __construct()
+	{
 		parent::__construct();
 		 if (! $this->session->userdata('username'))
         {
             redirect('login');
         }
 		$this->load->library('form_validation');		
-		$this->load->model('Model_Rumah'); 
+		$this->load->model('Model_Rumah');
 	}
 
 	function index()
+
 	{
 		$data['title'] = 'Data Rumah';
 		$data['rumah'] = $this->Model_Rumah->tampil_data();
@@ -23,6 +25,7 @@ class Rumah extends CI_Controller{
 	}
 
 	function input()
+
 	{
 		$this->load->library('form_validation');
 
@@ -49,6 +52,7 @@ class Rumah extends CI_Controller{
 	}
 
 	function delete($id_a)
+
 	{
 		$id_a = $this->uri->segment(3);
 		if (empty($id_a))
@@ -62,6 +66,7 @@ class Rumah extends CI_Controller{
 	}
 
 	function edit($id_a)
+
 	{
 		$id_a = $this->uri->segment(3);
 		if (empty($id_a))
@@ -91,6 +96,5 @@ class Rumah extends CI_Controller{
 			redirect('rumah');
 		}
 	}
-}
 
- 
+}
