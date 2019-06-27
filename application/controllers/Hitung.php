@@ -12,7 +12,8 @@ class Hitung extends CI_Controller{
     protected $total = array();
     protected $rank = array();
  
-	function __construct(){
+	function __construct()
+    {
 		parent::__construct();
         if (! $this->session->userdata('username'))
         {
@@ -24,7 +25,8 @@ class Hitung extends CI_Controller{
 		$this->load->model('Model_Hitung');
 	}
 
-	function index(){
+	function index()
+    {
 
 		$data['title'] = 'Perhitungan SAW';
         $data['title2'] = '(Simple Additive Weighting)';
@@ -42,43 +44,52 @@ class Hitung extends CI_Controller{
 		$this->load->view('footer');
 	}
 
-	function get_kriteria(){
+	function get_kriteria()
+    {
 
 		$rows = $this->Model_Kriteria->tampil_hitung();
-		foreach ($rows as $row) {
+		foreach ($rows as $row)
+        {
 			$this->kriteria[$row->id_k] = $row;
 		}
 		return $this->kriteria;
 	}
 
-	function get_crips(){
+	function get_crips()
+    {
 
 		$rows = $this->Model_Crips->tampil_hitung();
-		foreach ($rows as $row) {
+		foreach ($rows as $row)
+        {
 			$this->crips[$row->id_cp] = $row;
 		}
 		return $this->crips;
 	}
 
-	function get_rumah(){
+	function get_rumah()
+    {
 
 		$rows = $this->Model_Rumah->tampil_hitung();
-		foreach ($rows as $row) {
+		foreach ($rows as $row)
+        {
 			$this->rumah[$row->id_a] = $row;
 		}
 		return $this->rumah;
 	}
 
-	function matriks( $rel = array() ){
+	function matriks( $rel = array() )
+    {
 
 		$rows = $this->Model_Hitung->get_rel();
-		foreach ($rows as $row) {
+		foreach ($rows as $row)
+        {
 			$this->matriks[$row->id_a][$row->id_k] = $row->id_cp;
 		}
 		return $this->matriks;
 	}
 
-	function normalisasi(){
+	function normalisasi()
+    {
 
 		$mm = array();
                 
@@ -104,7 +115,8 @@ class Hitung extends CI_Controller{
         return $this->normal;
 	}
 
-	function hasil(){
+	function hasil()
+    {
 
 		foreach($this->normal as $key => $value)
         {
@@ -117,7 +129,8 @@ class Hitung extends CI_Controller{
 	}
 
 
-	function total(){
+	function total()
+    {
 
 		foreach($this->hasil as $key => $value)
         {
@@ -130,12 +143,14 @@ class Hitung extends CI_Controller{
         return $this->total;
 	}
 
-	function rank(){
+	function rank()
+    {
 
 		$data = $this->total;
         arsort($data);
         $no=1;
-        foreach($data as $key => $value){
+        foreach($data as $key => $value)
+        {
             $this->rank[$key] = $no++;
         }
         return $this->rank;
