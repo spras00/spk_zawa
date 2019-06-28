@@ -28,7 +28,8 @@ Tambah Data
 		</tr>
 	</thead>
 		<?php
-		foreach ($kriteria as $kr) {?>
+		$sum = 0;
+		foreach ($kriteria as $kr) {?>	
 			<tr>
 				<td>
 					<?php echo $kr['id_k']; ?>
@@ -59,7 +60,15 @@ Tambah Data
 					</a>
 				</td>
 			</tr> <?php
-		} ?>
+		$sum += $kr['bobot'];
+		}
+		if ($sum == 100) echo 'Total Bobot adalah 100, maka bobot perhitungan sudah valid';
+			elseif ($sum < 100) {
+				echo 'Total Bobot tidak boleh lebih kecil dari 100. Silahkan input ulang bobot';
+			}
+			elseif ($sum > 100) {
+			 	echo 'Total Bobot tidak boleh lebih besar dari 100. Silahkan input ulang bobot';
+			}?>
 </table>
 </div>
 </div>
