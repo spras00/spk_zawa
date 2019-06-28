@@ -8,15 +8,13 @@ Class Model_Crips extends CI_Model{
 		parent::__construct();
 	}
 
-	function tampil_data1(){
-		$query = $this->db->get('kriteria');
+	function tampil_data(){
+		$this->db->join('kriteria', 'kriteria.id_k=crips.id_k');
+        $this->db->order_by( 'kriteria.id_k' );
+        $this->db->order_by('skor');
+        $query = $this->db->get('crips');
 		return $query->result();
 		}
-
-	function tampil_data2($id_k){
-		$query = $this->db->get_where('crips', array('id_k' => $id_k));
-		return $query->result();
-	}
 
 	function tampil_hitung(){
         $this->db->join('kriteria', 'kriteria.id_k=crips.id_k');
@@ -38,9 +36,9 @@ Class Model_Crips extends CI_Model{
 		return $query->row_array();
 	}
 
-	function kriteria($id_k){
-		$query = $this->db->get_where('kriteria', array('id_k' => $id_k));
-		return $query->row_array();
+	function kriteria(){
+		$query = $this->db->get('kriteria');
+		return $query->result();
 	}
 
 	function crips_kriteria($id_k)
@@ -75,8 +73,8 @@ Class Model_Crips extends CI_Model{
 
 	function hapus($id_cp)
 	{
-		$this->db->where('id_cp', $id_cp);
-		return $this->db->delete('crips');
+		$this->db->delete('r_altrumah', array('id_cp' => $id_cp));
+		$this->db->delete('crips', array('id_cp' => $id_cp));
 	}
 
 }
