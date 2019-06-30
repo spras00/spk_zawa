@@ -59,4 +59,11 @@ class Model_Kriteria extends CI_Model{
 		$this->db->delete('r_altrumah', array('id_k' => $id_k));
 		$this->db->delete('kriteria', array('id_k' => $id_k));
 	}
+
+	function c_bobot()
+	{	
+		$query = $this->db->query("SELECT SUM(bobot) as total from kriteria");
+		return $query->result();
+	}
+
 }
