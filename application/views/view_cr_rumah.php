@@ -1,23 +1,29 @@
 </div>	
   <?php           
-            $relasi = array(); 
+            $relasi = array();
+            if(empty($relasi)){echo "" ;}
             foreach ($rows as $row) {                
                 $alternatif[$row->id_a] = $row->nm_a;
                 $relasi[$row->id_a][$row->id_k] = $row->nm_cp;                
-            }                                
+        }             
         ?>
 <table align="center" class="table table-hover">
 	  <thead><tr>
                 <th>ID Rumah</th>
                 <th>Nama Rumah</th>
-                <?php 
+                <?php
                 $first = array_values($relasi);
+                if(empty($first)){echo "" ;}
+                else
                 foreach ($first[0] as $key => $val):?>
                     <th><?=$key?></th>
-                <?php endforeach ?>
+                <?php endforeach?>
                 <th></th>
             </tr></thead>    
-            <?php foreach ($alternatif as $key => $value):?>
+            <?php 
+                if(empty($first)){echo "" ;}
+                else
+            foreach ($alternatif as $key => $value):?>
             <tr>
                 <td><?=$key?></td>
                 <td><?=$value?></td>
@@ -29,5 +35,12 @@
                 </td>
             </tr>
             <?php endforeach?>
+<div class="btn header-btn pull-right">
+<a href="<?php echo site_url('hitung'); ?>">
+<button type="button" class="btn btn-default" onclick="">
+Perhitungan SAW
+</button>
+</a>
+</div>
 </table>
 </div>
