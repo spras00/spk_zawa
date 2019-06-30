@@ -59,16 +59,8 @@ Tambah Data
 						</button>
 					</a>
 				</td>
-			</tr> <?php
-		$sum += $kr['bobot'];
-		}
-		if ($sum == 100) echo 'Total Bobot adalah 100, maka bobot perhitungan sudah valid';
-			elseif ($sum < 100) {
-				echo 'Total Bobot tidak boleh lebih kecil dari 100. Silahkan input ulang bobot';
-			}
-			elseif ($sum > 100) {
-			 	echo 'Total Bobot tidak boleh lebih besar dari 100. Silahkan input ulang bobot';
-			}?>
+			</tr><?php
+		} ?>
 </table>
 </div>
 </div>
