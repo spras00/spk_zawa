@@ -32,7 +32,7 @@ class Kriteria extends CI_Controller{
 		$this->form_validation->set_rules('id_k', 'ID KRITERIA', 'trim|required|min_length[2]');
 		$this->form_validation->set_rules('nm_k', 'NAMA KRITERIA', 'required');
 		$this->form_validation->set_rules('atribut', 'ATRIBUT', 'required');
-		$this->form_validation->set_rules('bobot', 'BOBOT', 'trim|required');
+		$this->form_validation->set_rules('bobot', 'BOBOT', 'trim|required|callback_checkbobot');
 
 		if($this->form_validation->run() === FALSE)
 		{
@@ -85,6 +85,21 @@ class Kriteria extends CI_Controller{
 			$this->Model_Kriteria->buat($id_k);
 			redirect('kriteria');
 		}
+	}
+
+	function checkbobot($str)
+	{	
+		if ($str != null) {
+			$data = $this->Model_Kriteria->c_bobot();
+			//$x = $str + $data;
+			if($str > $data === FALSE){
+				$this->form_validation->set_message('checkbobot', 'Total Bobot tidak boleh lebih dari 100');
+				return FALSE;
+			}else
+			return TRUE;
+			}
+			$this->form_validation->set_message('checkbobot', 'The ATRIBUT field is required.');
+		return false;
 	}
   
 }
