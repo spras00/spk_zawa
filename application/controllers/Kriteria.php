@@ -32,7 +32,7 @@ class Kriteria extends CI_Controller{
 		$this->form_validation->set_rules('id_k', 'ID KRITERIA', 'trim|required|min_length[2]');
 		$this->form_validation->set_rules('nm_k', 'NAMA KRITERIA', 'required');
 		$this->form_validation->set_rules('atribut', 'ATRIBUT', 'required');
-		$this->form_validation->set_rules('bobot', 'BOBOT', 'trim|required|callback_checkbobot');
+		$this->form_validation->set_rules('bobot', 'BOBOT', 'trim|required|callback_checkbobot_n');
 
 		if($this->form_validation->run() === FALSE)
 		{
@@ -87,22 +87,36 @@ class Kriteria extends CI_Controller{
 		}
 	}
 
-	function checkbobot($str)
+	function checkbobot_n()
 	{	
-		$total = 0;
-		$check = $this->Model_Kriteria->c_bobot();
+		$str = $this->input->post('bobot');
 		if ($str != null) {
-		foreach ($check as $b) {
-		$total += $b->total;
-		}//return $total;
-			if($str > $total === FALSE){
-				$this->form_validation->set_message('checkbobot', 'Total Bobot tidak boleh lebih dari 100');
+		$check = $this->Model_Kriteria->c_bobot($str);
+			if($check === FALSE){
+				$this->form_validation->set_message('checkbobot_n', 'Total Bobot tidak boleh lebih dari 100');
 				return FALSE;
 			}else
-			return TRUE;
+				return TRUE;
 		}
 		else
-		$this->form_validation->set_message('checkbobot', 'The BOBOT field is required.');
+		$this->form_validation->set_message('checkbobot_n', 'The BOBOT field is required.');
 		return false;
+	}
+
+	function checkbobot_e()
+	{	
+		$str = $this->input->post('bobot');
+		$x = $this->input->post('id_k');
+		if ($str != null) {
+		$check = $this->Model_Kriteria->c_bobot_e($str,$x);
+			if($check === FALSE){
+				$this->form_validation->set_message('checkbobot_n', 'Total Bobot tidak boleh lebih dari 100');
+				return FALSE;
+			}else
+				return TRUE;
 		}
+		else
+		$this->form_validation->set_message('checkbobot_n', 'The BOBOT field is required.');
+		return false;
+	}
 }
