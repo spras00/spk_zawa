@@ -60,10 +60,28 @@ class Model_Kriteria extends CI_Model{
 		$this->db->delete('kriteria', array('id_k' => $id_k));
 	}
 
-	function c_bobot()
+	function c_bobot($str)
 	{	
-		$query = $this->db->query("SELECT SUM(bobot) as total from kriteria");
-		return $query->result();
+		$data = $this->db->query("SELECT SUM(bobot) + $str as total from kriteria");
+		$total = $data->row_array();
+		$sum = $total['total'];
+		if ($sum > 100) {
+			return FALSE;
+		}else if ($sum == 0) {
+			return TRUE;
+		}else
+			return TRUE;
 	}
+
+	function c_bobot_e($str,$x)
+	{	
+		$data = $this->db->query("SELECT SUM(bobot) + $str as total from kriteria WHERE 'id_k' NOTLIKE $x ");
+		$total = $data->row_array();
+		$sum = $total['total'];
+		if ($sum > 100) {
+			return FALSE;
+		}else
+			return TRUE;
+		}
 
 }
