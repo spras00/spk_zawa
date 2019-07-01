@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.16-MariaDB)
-# Date: 2019-07-01 00:16:19
+# Date: 2019-07-02 01:49:37
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -65,7 +65,7 @@ REPLACE INTO `kriteria` VALUES ('C1','HARGA','0',30),('C2','LOKASI','1',20),('C3
 #
 
 CREATE TABLE `r_altrumah` (
-  `id_r` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `id_r` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `id_a` varchar(5) NOT NULL DEFAULT '0',
   `id_k` varchar(5) NOT NULL,
   `id_cp` varchar(4) NOT NULL,
