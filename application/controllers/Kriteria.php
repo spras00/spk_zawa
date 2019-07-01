@@ -2,7 +2,7 @@
  
  
 class Kriteria extends CI_Controller{
- 
+ 	
 	function __construct()
 	{
 		parent::__construct();
@@ -89,17 +89,19 @@ class Kriteria extends CI_Controller{
 
 	function checkbobot($str)
 	{	
+		$total = 0;
+		$check = $this->Model_Kriteria->c_bobot();
 		if ($str != null) {
-			$data = $this->Model_Kriteria->c_bobot();
-			//$x = $str + $data;
-			if($str > $data === FALSE){
+		foreach ($check as $b) {
+		$total += $b->total;
+		}return $total;
+			if($str > $total === FALSE){
 				$this->form_validation->set_message('checkbobot', 'Total Bobot tidak boleh lebih dari 100');
 				return FALSE;
 			}else
 			return TRUE;
 			}
-			$this->form_validation->set_message('checkbobot', 'The ATRIBUT field is required.');
+			$this->form_validation->set_message('checkbobot', 'The BOBOT field is required.');
 		return false;
-	}
-  
+		}
 }
