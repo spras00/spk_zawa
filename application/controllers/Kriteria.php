@@ -94,14 +94,15 @@ class Kriteria extends CI_Controller{
 		if ($str != null) {
 		foreach ($check as $b) {
 		$total += $b->total;
-		}return $total;
+		}//return $total;
 			if($str > $total === FALSE){
 				$this->form_validation->set_message('checkbobot', 'Total Bobot tidak boleh lebih dari 100');
 				return FALSE;
 			}else
 			return TRUE;
-			}
-			$this->form_validation->set_message('checkbobot', 'The BOBOT field is required.');
+		}
+		else
+		$this->form_validation->set_message('checkbobot', 'The BOBOT field is required.');
 		return false;
 		}
 }
