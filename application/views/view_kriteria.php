@@ -1,13 +1,21 @@
 </div>
 <div class="table-responsive">
-<div class="btn header-btn pull-right">
+<div class="btn header-btn pull-left">
 <a href="<?php echo site_url('kriteria/input'); ?>">
 <button type="button" class="btn btn-default ">
 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 Tambah Data
 </button>
 </a>
-</div>	
+</div>
+<div class="btn header-btn pull-right">
+<a href="<?php echo site_url('kriteria/edit_b'); ?>">
+<button type="button" class="btn btn-default ">
+<span class="glyphicon glyphicon-scale" aria-hidden="true"></span>
+Ubah Bobot
+</button>
+</a>
+</div>		
 <table align="center" class="table table-hover">
 	<thead>
 		<tr>
