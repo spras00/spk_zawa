@@ -5,6 +5,8 @@ class Login extends CI_Controller {
 
     {
         parent::__construct();
+        $this->load->library('form_validation');        
+        $this->load->model('Model_Kriteria'); 
         $this->load->model('Model_Login');
         $this->load->library('form_validation');           
     }
