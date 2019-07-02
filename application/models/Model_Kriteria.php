@@ -54,6 +54,22 @@ class Model_Kriteria extends CI_Model{
 		
 	}
 
+	function baca_bobot()
+	{
+		$data = $this->db->query("SELECT id_k, nm_k, bobot from kriteria");
+		return $data->result_array();
+	}
+
+	function edit_b($id_k)
+	{
+		$data = array(
+			'id_k' => $this->input->post('bobot[]'),
+			'bobot' => $this->input->post('bobot')
+		);
+		$this->db->where('id_k', $id_k);
+		return $this->db->update('kriteria', $data);
+	}
+
 	function hapus($id_k)
 	{
 		$this->db->delete('r_altrumah', array('id_k' => $id_k));
@@ -75,13 +91,16 @@ class Model_Kriteria extends CI_Model{
 
 	function c_bobot_e($str,$x)
 	{	
-		$data = $this->db->query("SELECT SUM(bobot) + $str as total from kriteria WHERE 'id_k' NOTLIKE $x ");
+		$data = $this->db->select_sum('bobot', 'total');
+		$data = $this->db->get('kriteria');
 		$total = $data->row_array();
+		//$data = $this->db->query("SELECT SUM(bobot) + $str as total from kriteria WHERE id_k = $x");
+		//$total = $data->row_array();
 		$sum = $total['total'];
 		if ($sum > 100) {
 			return FALSE;
 		}else
 			return TRUE;
-		}
+	}
 
 }
