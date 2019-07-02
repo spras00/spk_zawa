@@ -36,11 +36,18 @@
             </tr>
             <?php endforeach?>
 <div class="btn header-btn pull-right">
-<a href="<?php echo site_url('hitung'); ?>">
-<button type="button" class="btn btn-default" onclick="">
+<!--<a href="<?php echo site_url('hitung'); ?>">
+</a>-->
+<button type="button" class="btn btn-default" onclick="c_null()">
 Perhitungan SAW
 </button>
-</a>
 </div>
 </table>
 </div>
+<script>
+    function c_null() {
+    var x = <?php echo json_encode($relasi); ?>;
+    var id = JSON.parse(x);
+    alert(JSON.stringfiy(id));
+}
+</script>
