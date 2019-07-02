@@ -87,6 +87,28 @@ class Kriteria extends CI_Controller{
 		}
 	}
 
+	function edit_b()
+	{	
+		$id_k = $this->input->post('id_k');
+		$data['title'] = 'Ubah Nilai Bobot';
+		$data['rows'] = $this->Model_Kriteria->baca_bobot();
+
+		$this->form_validation->set_rules( 'bobot[]', 'BOBOT', 'required' );
+
+		if($this->form_validation->run() === FALSE)
+		{
+			$this->load->view('header', $data);
+			$this->load->view('edit_bobot',$data);
+			$this->load->view('footer');	
+		}else
+		{
+			$this->Model_Kriteria->edit_b($id_k);
+			redirect('kriteria');
+		}
+
+
+	}
+
 	function checkbobot_n()
 	{	
 		$str = $this->input->post('bobot');
