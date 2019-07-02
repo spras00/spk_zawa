@@ -7,7 +7,7 @@
                 $relasi[$row->id_a][$row->id_k] = $row->nm_cp;                
         }             
         ?>
-<table align="center" class="table table-hover">
+<table align="center" class="table table-hover table-striped">
 	  <thead><tr>
                 <th>ID Rumah</th>
                 <th>Nama Rumah</th>
@@ -26,7 +26,7 @@
             foreach ($alternatif as $key => $value):?>
             <tr>
                 <td><?=$key?></td>
-                <td><?=$value?></td>
+                <td id="mycell"><?=$value?></td>
                 <?php foreach ($relasi[$key] as $val):?>
                     <td><?=$val?></td>
                 <?php endforeach ?>
@@ -37,7 +37,7 @@
             <?php endforeach?>
 <div class="btn header-btn pull-right">
 <a href="<?php echo site_url('hitung'); ?>">
-<button type="button" class="btn btn-default" onclick="">
+<button type="button" class="btn btn-default" onclick="return confirm('Pastikan semua alternatif sudah diberi nilai ! Lanjutkan Ke Perhitungan ?');">
 Perhitungan SAW
 </button>
 </a>
