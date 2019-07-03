@@ -50,9 +50,10 @@ Perhitungan SAW
     var res = [];
     var ult = [];
 
-    for(var i = 0 in x){
+    for(var i in x){
+        res.push([i, x [i]]);
         for (var j in x){
-        res.push([i, x [j]]);
+        res.push();
         }alert(i);
     }
 }
