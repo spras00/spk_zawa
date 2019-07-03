@@ -8,9 +8,16 @@ class Model_Rumah extends CI_Model{
 		parent::__construct();
 	}
 
-	function tampil_data(){
+	function isipage($limit, $start){
+		$this->db->order_by('id_a');
+		$this->db->limit($limit, $start);
 		$query = $this->db->get('altrumah');
 		return $query->result_array();
+	}
+
+	function row(){
+		return $query = $this->db->get('altrumah')->num_rows();
+		
 	}
 
 	function tampil_hitung(){
