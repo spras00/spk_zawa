@@ -18,27 +18,45 @@ Class Crips extends CI_Controller {
 
 	function index()
 	{
+		$config['base_url'] = base_url().'crips/index';
+		$config['uri_segement'] = 3;
+		$config['total_rows'] = $this->Model_Crips->row();
+		$config['per_page'] = '10';
+		
+		//style
+
+		$config['first_link'] = 'First Page';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+
+
+		$config['next_link'] = 'Next Page';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+
+		$config['last_link'] = 'Last Page';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+
+		$config['prev_link'] = 'Prev Page';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+
+		$this->pagination->initialize($config);
+		$page = $this->uri->segment(3,0);
+
 		$data['title'] = ' Nilai Crips Kriteria';
-		$data['rows'] = $this->Model_Crips->tampil_data();
+		$data['hal'] = $this->pagination->create_links();
+		$data['rows'] = $this->Model_Crips->isipage($config['per_page'], $page);
 		$this->load->view('header', $data);
 		$this->load->view('view_crips', $data);
 		$this->load->view('footer');
 	}
-
-	/*function detail()
-	{
-        $id_k = $this->uri->segment(3);
-		if (empty($id_k))
-        {
-            show_404();
-        }
-
-		$data['title'] = 'Detail Crips Kriteria $id_k';
-		$data['rows'] = $this->Model_Crips->tampil_data2($id_k);
-		$this->load->view('header', $data);
-		$this->load->view('view_crips2', $data);
-		$this->load->view('footer');
-	}*/
 
 	function input()
 	{
@@ -59,7 +77,6 @@ Class Crips extends CI_Controller {
 		{
 			$this->Model_Crips->buat();
 			redirect('crips');
-			//redirect('crips/detail/'.$id_k);
 		}
 	}
 
@@ -102,7 +119,6 @@ Class Crips extends CI_Controller {
 		{
 			$this->Model_Crips->buat($id_cp);
 			redirect('crips');
-			//redirect('crips/detail/'.$id_k);
 		}
 	}
 
