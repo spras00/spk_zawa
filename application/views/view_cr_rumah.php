@@ -56,11 +56,11 @@ Perhitungan SAW
                                             }
                                         }
                                     }
-                                }//else return false;
+                                }
                             }
                             if (a[i][j] != null){
                                 if (confirm("Lanjutkan ke perhitungan?"))
                                 window.location.href = go;
                             }
-                        }
+}
 </script>
