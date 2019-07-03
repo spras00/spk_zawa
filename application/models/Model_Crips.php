@@ -79,7 +79,6 @@ Class Model_Crips extends CI_Model{
 
 	function hapus($id_cp)
 	{
-		$this->db->delete('r_altrumah', array('id_cp' => $id_cp));
 		$this->db->delete('crips', array('id_cp' => $id_cp));
 	}
 
