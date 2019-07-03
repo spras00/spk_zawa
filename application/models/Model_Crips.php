@@ -8,13 +8,19 @@ Class Model_Crips extends CI_Model{
 		parent::__construct();
 	}
 
-	function tampil_data(){
+	function isipage($limit, $start){
 		$this->db->join('kriteria', 'kriteria.id_k=crips.id_k');
         $this->db->order_by( 'kriteria.id_k' );
         $this->db->order_by('skor');
+        $this->db->limit($limit, $start);
         $query = $this->db->get('crips');
-		return $query->result();
+		return $query->result_array();
 		}
+
+	function row(){
+		return $query = $this->db->get('crips')->num_rows();
+		
+	}
 
 	function tampil_hitung(){
         $this->db->join('kriteria', 'kriteria.id_k=crips.id_k');
