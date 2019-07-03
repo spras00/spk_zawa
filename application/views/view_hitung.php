@@ -1,5 +1,12 @@
 <i><h1 align="center"><?php echo $title2; ?></h1></i>
 <div class="panel panel-default">
+<div class="btn header-btn pull-right">
+<a href="<?php echo site_url('cr_rumah'); ?>">
+<button type="button" id="next" class="btn btn-default" >
+Kembali
+</button>
+</a>
+</div>
     <div class="panel-heading"><h4>Hasil Analisa</h4></div>
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
