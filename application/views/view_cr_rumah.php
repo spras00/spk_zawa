@@ -36,9 +36,7 @@
             </tr>
             <?php endforeach?>
 <div class="btn header-btn pull-right">
-<!--<a href="<?php echo site_url('hitung'); ?>">
-</a>-->
-<button type="button" class="btn btn-default" onclick="c_null()">
+<button type="button" id="next" class="btn btn-default" onclick="c_null()">
 Perhitungan SAW
 </button>
 </div>
@@ -46,15 +44,23 @@ Perhitungan SAW
 </div>
 <script>
     function c_null() {
-    var x = <?php echo json_encode($relasi); ?>;
-    var res = [];
-    var ult = [];
+    var a = <?php echo json_encode($relasi); ?>;
+    var go = "<?php echo site_url('hitung'); ?>";
 
-    for(var i in x){
-        res.push([i, x [i]]);
-        for (var j in x){
-        res.push();
-        }alert(i);
-    }
-}
+        for(var i in a){
+            if(a.hasOwnProperty(i)){
+                for(var j in a[i]){
+                    if(a[i].hasOwnProperty(j)){
+                        if (a[i][j] == null) {
+                            alert("Nilai "+(j)+" pada "+(i)+" tidak boleh kosong.");
+                                            }
+                                        }
+                                    }
+                                }//else return false;
+                            }
+                            if (a[i][j] != null){
+                                if (confirm("Lanjutkan ke perhitungan?"))
+                                window.location.href = go;
+                            }
+                        }
 </script>
