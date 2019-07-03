@@ -107,9 +107,9 @@ class Hitung extends CI_Controller{
             foreach($value as $k => $v)
             {
                 if($this->kriteria[$k]->atribut == '1')
-                    $this->normal[$key][$k] = $this->crips[$v]->skor / max($mm[$k]) ;
+                    $this->normal[$key][$k] = $this->crips[$v]->skor / max($mm[$k]);
                 else
-                     $this->normal[$key][$k] = min($mm[$k]) / $this->crips[$v]->skor; 
+                    $this->normal[$key][$k] = min($mm[$k]) / $this->crips[$v]->skor; 
             }
         }
         return $this->normal;
