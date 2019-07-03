@@ -62,9 +62,10 @@ class Model_Kriteria extends CI_Model{
 
 	function c_bobot($str)
 	{	
-		$data = $this->db->query("SELECT SUM(bobot) + $str as total from kriteria");
+		$data = $this->db->select_sum('bobot')->get('kriteria');
 		$total = $data->row_array();
-		$sum = $total['total'];
+		$total['bobot'] += $str;
+		$sum = $total['bobot'];
 		if ($sum > 100) {
 			return FALSE;
 		}else if ($sum == 0) {
@@ -73,11 +74,12 @@ class Model_Kriteria extends CI_Model{
 			return TRUE;
 	}
 
-	function c_bobot_e($str,$x)
+	function c_bobot_e($str, $x)
 	{	
-		$data = $this->db->query("SELECT SUM(bobot) + $str as total from kriteria WHERE 'id_k' NOTLIKE $x ");
+		$data = $this->db->select_sum('bobot')->where_not_in('kriteria.id_k', $x)->get('kriteria');
 		$total = $data->row_array();
-		$sum = $total['total'];
+		$total['bobot'] += $str;
+		$sum = $total['bobot'];
 		if ($sum > 100) {
 			return FALSE;
 		}else
