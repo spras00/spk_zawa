@@ -78,4 +78,9 @@ Tambah Data
 			</tr> <?php
 		} ?>
 </table>
+<div align="center">
+	<ul class="pager">
+		<?php echo $hal; ?>
+	</ul>
+</div>
 </div>
