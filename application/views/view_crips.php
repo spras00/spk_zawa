@@ -33,12 +33,12 @@ Tambah Data
 		<?php    
         foreach($rows as $row):?>
         <tr>
-            <td><?=$row->id_cp ?></td>
-            <td><?=$row->nm_k?></td>
-            <td><?=$row->nm_cp?></td>
-            <td><?=$row->skor?></td>
+            <td><?=$row['id_cp']?></td>
+            <td><?=$row['nm_k']?></td>
+            <td><?=$row['nm_cp']?></td>
+            <td><?=$row['skor']?></td>
 				<td align="center" class="col-md-1">
-					<a href="<?=site_url("crips/edit/$row->id_cp"); ?>">
+					<a href="<?=site_url('crips/edit/'.$row['id_cp']); ?>">
 						<button type="button" class="btn btn-default">
 							Ubah
   						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
@@ -46,7 +46,7 @@ Tambah Data
 					</a>
 				</td>
 				<td align="center" class="col-md-1">	
-					<a href="<?=site_url("crips/delete/$row->id_cp"); ?>"  onclick="return confirm('Hapus Data Crips?');">
+					<a href="<?=site_url('crips/delete/'.$row['id_cp']); ?>"  onclick="return confirm('Hapus Data Crips?');">
 						<button type="button" class="btn btn-danger">
 							Hapus
 						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
@@ -56,4 +56,9 @@ Tambah Data
 		</tr>
 	<?php endforeach;?>
 </table>
+<div align="center">
+	<ul class="pager">
+		<?php echo $hal; ?>
+	</ul>
+</div>
 </div>
