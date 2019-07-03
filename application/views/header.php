@@ -30,9 +30,6 @@
       <li>
         <a href="<?php echo site_url('cr_rumah'); ?>">Nilai Crips Rumah</a>
       </li>
-      <!--<li>
-        <a href="<?php echo site_url('hitung'); ?>">Perhitungan SAW</a>
-      </li>-->
       <li>
         <a href="<?php echo site_url('login/logout'); ?>">Keluar</a>
       </li>
