@@ -47,7 +47,13 @@ Perhitungan SAW
 <script>
     function c_null() {
     var x = <?php echo json_encode($relasi); ?>;
-    var id = JSON.parse(x);
-    alert(JSON.stringfiy(id));
+    var res = [];
+    var ult = [];
+
+    for(var i = 0 in x){
+        for (var j in x){
+        res.push([i, x [j]]);
+        }alert(i);
+    }
 }
 </script>
