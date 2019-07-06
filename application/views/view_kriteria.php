@@ -28,7 +28,8 @@ Tambah Data
 		</tr>
 	</thead>
 		<?php
-		foreach ($kriteria as $kr) {?>
+		$sum = 0;
+		foreach ($kriteria as $kr) {?>	
 			<tr>
 				<td>
 					<?php echo $kr['id_k']; ?>
@@ -58,7 +59,7 @@ Tambah Data
 						</button>
 					</a>
 				</td>
-			</tr> <?php
+			</tr><?php
 		} ?>
 </table>
 </div>
