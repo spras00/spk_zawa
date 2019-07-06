@@ -17,8 +17,42 @@ class Rumah extends CI_Controller{
 	function index()
 
 	{
+		$config['base_url'] = base_url().'rumah/index';
+		$config['uri_segement'] = 3;
+		$config['total_rows'] = $this->Model_Rumah->row();
+		$config['per_page'] = '5';
+		
+		//style
+
+		$config['first_link'] = 'First Page';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+
+
+		$config['next_link'] = 'Next Page';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+
+		$config['last_link'] = 'Last Page';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+
+		$config['prev_link'] = 'Prev Page';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+
+		$this->pagination->initialize($config);
+		$page = $this->uri->segment(3,0);
+
+
 		$data['title'] = 'Data Rumah';
-		$data['rumah'] = $this->Model_Rumah->tampil_data();
+		$data['hal'] = $this->pagination->create_links();
+		$data['rumah'] = $this->Model_Rumah->isipage($config['per_page'], $page);
 		$this->load->view('header', $data);
 		$this->load->view('view_rumah', $data);
 		$this->load->view('footer');
