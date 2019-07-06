@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.16-MariaDB)
-# Date: 2019-07-02 01:49:37
+# Date: 2019-07-07 02:13:59
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -40,7 +40,7 @@ CREATE TABLE `crips` (
 # Data for table "crips"
 #
 
-REPLACE INTO `crips` VALUES ('CR11','C1','<= 1 Milyar Rupiah',100),('CR12','C1','1 - <= 2 Milyar Rupiah',75),('CR13','C1','2 - <= 3 Milyar Rupiah',50),('CR14','C1','3 - <= 4 Milyar Rupiah',25),('CR21','C2','Jakarta',100),('CR22','C2','Botedabek',75),('CR23','C2','Luar Jabodetabek',50),('CR31','C3','>= 150 m2',100),('CR32','C3','<=100 - 150 m2',75),('CR33','C3','<50 - 100 m2',50),('CR34','C3','<=50 m2',25),('CR41','C4','>= 4 Kamar Tidur',100),('CR42','C4','3 Kamar Tidur',75),('CR43','C4','2 Kamar Tidur',50),('CR44','C4','1 Kamar Tidur',25),('CR51','C5','Full Furnish',100),('CR52','C5','Semi Furnish',75),('CR53','C5','Un Furnish',50);
+REPLACE INTO `crips` VALUES ('CR11','C1','<= 1 Milyar Rupiah',100),('CR12','C1','1 - <= 2 Milyar Rupiah',75),('CR13','C1','2 - <= 3 Milyar Rupiah',50),('CR14','C1','3 - <= 4 Milyar Rupiah',25),('CR21','C2','Jakarta',100),('CR22','C2','Bodetabek',75),('CR23','C2','Luar Jabodetabek',50),('CR31','C3','>= 150 m2',100),('CR32','C3','<=100 - 150 m2',75),('CR33','C3','<50 - 100 m2',50),('CR34','C3','<=50 m2',25),('CR41','C4','>= 4 Kamar Tidur',100),('CR42','C4','3 Kamar Tidur',75),('CR43','C4','2 Kamar Tidur',50),('CR44','C4','1 Kamar Tidur',25),('CR51','C5','Full Furnish',100),('CR52','C5','Semi Furnish',75),('CR53','C5','Un Furnish',50);
 
 #
 # Structure for table "kriteria"
@@ -70,7 +70,7 @@ CREATE TABLE `r_altrumah` (
   `id_k` varchar(5) NOT NULL,
   `id_cp` varchar(4) NOT NULL,
   PRIMARY KEY (`id_r`)
-) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=latin1;
 
 #
 # Data for table "r_altrumah"
