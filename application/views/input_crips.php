@@ -1,10 +1,15 @@
 <?=print_error()?>
-<?php echo form_open('crips/input/'.$kriteria['id_k']);?>
+<?php echo form_open('crips/input');?>
 <div class="form-horizontal">
 			<div class="form-group">
 				<label for="id_k" class="control-label col-sm-4">ID KRITERIA</label>
 				<div class="col-xs-4">
-				<input type="text" class="form-control" name="id_k" value="<?php echo $kriteria['id_k']?>" readonly>
+				<select class="form-control" name="id_k">
+				<?php foreach ($rows as $row) {
+						echo '<option value="'.$row->id_k.'">'.$row->id_k.' - '.$row->nm_k.'</option>';
+						
+					}?>
+				</select>
 				</div>
 			</div>
 			<div class="form-group">
@@ -35,7 +40,7 @@
 			<div class="form-group"> 
     					<div class="col-sm-offset-4 col-sm-4">
       					<button type="submit" class="btn btn-success btn-block">Simpan</button>
-      					<button type="reset" onclick="location.href='<?php echo site_url('crips/detail/'.$kriteria['id_k']);?>'" class="btn btn-danger btn-block">Batal</button>
+      					<button type="reset" onclick="location.href='<?php echo site_url('crips');?>'" class="btn btn-danger btn-block">Batal</button>
   						</div>
   			</div>
 </div>
