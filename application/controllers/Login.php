@@ -5,6 +5,8 @@ class Login extends CI_Controller {
 
     {
         parent::__construct();
+        $this->load->library('form_validation');        
+        $this->load->model('Model_Rumah');
         $this->load->model('Model_Login');
         $this->load->library('form_validation');           
     }
@@ -12,6 +14,10 @@ class Login extends CI_Controller {
     function index()
 
     {   
+        if ($this->session->userdata('username'))
+        {
+            redirect('home');
+        }
         $this->load->library('form_validation');
         $this->form_validation->set_rules('username','USERNAME','required');  
         $this->form_validation->set_rules('password','PASSWORD','required');
