@@ -1,40 +1,64 @@
 </div>
- <?php           
-            foreach ($rows as $row) {                
-                $kriteria[$row->id_k] = $row->nm_k;             
-            }                                
-        ?>
+<div class="btn header-btn pull-right">
+<a href="<?php echo site_url('crips/input'); ?>">
+<button type="button" class="btn btn-default ">
+<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+Tambah Data
+</button>
+</a>
+</div>
 <table align="center" class="table table-hover">
 	<thead>
 		<tr>
 			<th>
-				ID KRITERIA
+				ID CRIPS
 			</th>
 			<th>
 				NAMA KRITERIA
 			</th>
 			<th>
+				NAMA CRIPS
+			</th>
+			<th>
+				SKOR
+			</th>
+			<th>
+				
+			</th>
+			<th>
+				
 			</th>
 		</tr>
 	</thead>
-		<?php 
-		foreach ($kriteria as $key => $value):?>
-			<tr>
-				<td class="col-md-4">
-					<?=$key?>
-				</td>
-				<td class="col-md-4">
-					<?=$value?>
-				</td>
-				<td align="center">
-					<a href="<?=site_url("crips/detail/$key"); ?>">
+		<?php    
+        foreach($rows as $row):?>
+        <tr>
+            <td><?=$row['id_cp']?></td>
+            <td><?=$row['nm_k']?></td>
+            <td><?=$row['nm_cp']?></td>
+            <td><?=$row['skor']?></td>
+				<td align="center" class="col-md-1">
+					<a href="<?=site_url('crips/edit/'.$row['id_cp']); ?>">
 						<button type="button" class="btn btn-default">
-							Lihat Nilai
-  						<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
+							Ubah
+  						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
 						</button>
 					</a>
 				</td>
-			</tr>
-			<?php endforeach ?>
+				<td align="center" class="col-md-1">	
+					<a href="<?=site_url('crips/delete/'.$row['id_cp']); ?>"  onclick="return confirm('Hapus Data Crips?');">
+						<button type="button" class="btn btn-danger">
+							Hapus
+						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</button>
+					</a>
+				</td>
+		</tr>
+	<?php endforeach;?>
 </table>
+<div align="center">
+	<ul class="pager">
+		<?php echo $hal; ?>
+	</ul>
+</div>
 </div>
