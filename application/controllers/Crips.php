@@ -6,6 +6,7 @@ Class Crips extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
+
 		if (! $this->session->userdata('username'))
         {
             redirect('login');
@@ -17,38 +18,55 @@ Class Crips extends CI_Controller {
 
 	function index()
 	{
+		$config['base_url'] = base_url().'crips/index';
+		$config['uri_segement'] = 3;
+		$config['total_rows'] = $this->Model_Crips->row();
+		$config['per_page'] = '10';
+		
+		//style
+
+		$config['first_link'] = 'First Page';
+		$config['first_tag_open'] = '<li>';
+		$config['first_tag_close'] = '</li>';
+
+
+<<<<<<< HEAD
+		$data['title'] = 'Detail Crips Kriteria';
+		$data['rows'] = $this->Model_Crips->tampil_data2($id_k);
+=======
+		$config['next_link'] = 'Next Page';
+		$config['next_tag_open'] = '<li>';
+		$config['next_tag_close'] = '</li>';
+
+		$config['last_link'] = 'Last Page';
+		$config['last_tag_open'] = '<li>';
+		$config['last_tag_close'] = '</li>';
+
+		$config['prev_link'] = 'Prev Page';
+		$config['prev_tag_open'] = '<li>';
+		$config['prev_tag_close'] = '</li>';
+
+		$config['num_tag_open'] = '<li>';
+		$config['num_tag_close'] = '</li>';
+		$config['cur_tag_open'] = '<li class="active"><a href="#">';
+		$config['cur_tag_close'] = '</a></li>';
+
+		$this->pagination->initialize($config);
+		$page = $this->uri->segment(3,0);
+
 		$data['title'] = ' Nilai Crips Kriteria';
-		$data['rows'] = $this->Model_Crips->tampil_data1();
+		$data['hal'] = $this->pagination->create_links();
+		$data['rows'] = $this->Model_Crips->isipage($config['per_page'], $page);
+>>>>>>> read.edit
 		$this->load->view('header', $data);
 		$this->load->view('view_crips', $data);
 		$this->load->view('footer');
 	}
 
-	function detail()
+	function input()
 	{
-        $id_k = $this->uri->segment(3);
-		if (empty($id_k))
-        {
-            show_404();
-        }
-
-		$data['title'] = 'Detail Crips Kriteria';
-		$data['rows'] = $this->Model_Crips->tampil_data2($id_k);
-		$this->load->view('header', $data);
-		$this->load->view('view_crips2', $data);
-		$this->load->view('footer');
-	}
-
-	function input($id_k)
-	{
-		$id_k = $this->uri->segment(3);
-		if (empty($id_k))
-        {
-            show_404();
-        }
-
 		$data['title'] = 'Input Data Crips';
-		$data['kriteria'] = $this->Model_Crips->kriteria($id_k);
+		$data['rows'] = $this->Model_Crips->kriteria();
 
 		$this->form_validation->set_rules('id_k', 'NAMA KRITERIA', 'trim|required');
 		$this->form_validation->set_rules('id_cp', 'ID CRIPS', 'trim|required|min_length[4]');
@@ -63,7 +81,7 @@ Class Crips extends CI_Controller {
 		}else
 		{
 			$this->Model_Crips->buat();
-			redirect('crips/detail/'.$id_k);
+			redirect('crips');
 		}
 	}
 
@@ -105,7 +123,7 @@ Class Crips extends CI_Controller {
 		}else
 		{
 			$this->Model_Crips->buat($id_cp);
-			redirect('crips/detail/'.$id_k);
+			redirect('crips');
 		}
 	}
 
