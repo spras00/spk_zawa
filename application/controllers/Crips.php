@@ -29,11 +29,9 @@ Class Crips extends CI_Controller {
 		$config['first_tag_open'] = '<li>';
 		$config['first_tag_close'] = '</li>';
 
-
-<<<<<<< HEAD
 		$data['title'] = 'Detail Crips Kriteria';
-		$data['rows'] = $this->Model_Crips->tampil_data2($id_k);
-=======
+		//$data['rows'] = $this->Model_Crips->tampil_data2($id_k);
+
 		$config['next_link'] = 'Next Page';
 		$config['next_tag_open'] = '<li>';
 		$config['next_tag_close'] = '</li>';
@@ -57,7 +55,7 @@ Class Crips extends CI_Controller {
 		$data['title'] = ' Nilai Crips Kriteria';
 		$data['hal'] = $this->pagination->create_links();
 		$data['rows'] = $this->Model_Crips->isipage($config['per_page'], $page);
->>>>>>> read.edit
+
 		$this->load->view('header', $data);
 		$this->load->view('view_crips', $data);
 		$this->load->view('footer');
