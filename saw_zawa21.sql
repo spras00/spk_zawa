@@ -1,5 +1,9 @@
 ﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.16-MariaDB)
+<<<<<<< HEAD
 # Date: 2019-06-28 15:45:25
+=======
+# Date: 2019-07-02 01:49:37
+>>>>>>> read.edit
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -33,8 +37,12 @@ CREATE TABLE `crips` (
   `id_k` varchar(5) NOT NULL,
   `nm_cp` varchar(50) NOT NULL DEFAULT '',
   `skor` double NOT NULL,
+<<<<<<< HEAD
   PRIMARY KEY (`id_cp`),
   KEY `id_k` (`id_k`)
+=======
+  PRIMARY KEY (`id_cp`)
+>>>>>>> read.edit
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 #
@@ -66,13 +74,17 @@ REPLACE INTO `kriteria` VALUES ('C1','HARGA','0',30),('C2','LOKASI','1',20),('C3
 #
 
 CREATE TABLE `r_altrumah` (
-  `id_r` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
+  `id_r` int(3) unsigned NOT NULL AUTO_INCREMENT,
   `id_a` varchar(5) NOT NULL DEFAULT '0',
   `id_k` varchar(5) NOT NULL,
   `id_cp` varchar(4) NOT NULL,
+<<<<<<< HEAD
   PRIMARY KEY (`id_r`),
   KEY `id_a` (`id_a`),
   KEY `id_k` (`id_k`)
+=======
+  PRIMARY KEY (`id_r`)
+>>>>>>> read.edit
 ) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=latin1;
 
 #
