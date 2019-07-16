@@ -1,5 +1,5 @@
 ﻿# Host: 127.0.0.1  (Version 5.5.5-10.1.16-MariaDB)
-# Date: 2019-07-07 02:13:59
+# Date: 2019-07-09 12:50:51
 # Generator: MySQL-Front 6.1  (Build 1.26)
 
 
@@ -22,7 +22,7 @@ CREATE TABLE `altrumah` (
 # Data for table "altrumah"
 #
 
-REPLACE INTO `altrumah` VALUES ('A01','Rumah Telaga Kahuripan','Parung Bogor',650000000,180,'3','Kitchen Set, Closet Duduk, AC'),('A02','Cluster Perum Villa Pamulang','Tangerang',590000000,90,'2','Ac, Bathub, Kitchen Set, Pompa Air'),('A03','KS .Tubun Jakarta Barat','DKI Jakarta',1100000000,100,'3','Ac, Bathub, Kitchen Set, Pompa Air'),('A04','Vila Mutiara Cibubur','Depok',1600000000,120,'3','Kosong'),('A05','Puri Botanical Kebon Jeruk Jakarta Barat','DKI Jakarta',2000000000,70,'2','Kosong'),('A06','Komplek De Green Villa Mutiara Bandung','Bandung',1250000000,148,'2','AC, Kitchen Set'),('A07','Paramount Gading Serpong','Tangerang',2950000000,187,'3','Full Furnish'),('A08','Tebet Dalam ','DKI Jakarta',2700000000,157,'7','Ac, Shower, Kitchen Set, Pompa Air'),('A09','Tanjung Duren','DKI Jakarta',2100000000,55,'5','Ac, Shower, Kitchen Set, Pompa Air'),('A10','Bukit Serpong Mas','Tangerang Selatan',1500000000,120,'2','2 AC, 2 tempat tidur, kitcen set, kulkas, 1 set sofa, 1 set meja makan, kompor gas');
+REPLACE INTO `altrumah` VALUES ('A01','Rumah Telaga Kahuripan','Parung Bogor',650000000,180,'3','Kitchen Set, Closet Duduk, AC'),('A02','Cluster Perum Villa Pamulang','Tangerang',590000000,90,'2','Ac, Bathub, Kitchen Set, Pompa Air'),('A03','Rumah KS .Tubun Jakarta Barat','DKI Jakarta',1100000000,100,'3','Ac, Bathub, Kitchen Set, Pompa Air'),('A04','Vila Mutiara Cibubur','Depok',1600000000,120,'3','Kosong'),('A05','Puri Botanical Kebon Jeruk Jakarta Barat','DKI Jakarta',2000000000,70,'2','Kosong'),('A06','Komplek De Green Villa Mutiara Bandung','Bandung',1250000000,148,'2','AC, Kitchen Set'),('A07','Paramount Gading Serpong','Tangerang',2950000000,187,'3','2 AC, 2 tempat tidur,  kitchen set, kulkas, 1 set sofa,  1 set meja makan, kompor gas'),('A08','Rumah Tebet Dalam ','DKI Jakarta',2700000000,157,'7','Ac, Shower, Kitchen Set, Pompa Air'),('A09','Rumah Tanjung Duren','DKI Jakarta',2100000000,55,'5','Ac, Shower, Kitchen Set, Pompa Air'),('A10','Bukit Serpong Mas','Tangerang Selatan',1500000000,120,'2','2 AC, 2 tempat tidur, kitcen set, kulkas, 1 set sofa, 1 set meja makan, kompor gas');
 
 #
 # Structure for table "crips"
@@ -58,7 +58,7 @@ CREATE TABLE `kriteria` (
 # Data for table "kriteria"
 #
 
-REPLACE INTO `kriteria` VALUES ('C1','HARGA','0',30),('C2','LOKASI','1',20),('C3','LUAS','1',20),('C4','TIPE','1',15),('C5','FASILITAS','1',15);
+REPLACE INTO `kriteria` VALUES ('C1','HARGA','0',30),('C2','LOKASI','1',20),('C3','LUAS','1',20),('C4','TIPE KAMAR','1',15),('C5','FASILITAS','1',15);
 
 #
 # Structure for table "r_altrumah"
